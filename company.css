@@ -1,0 +1,134 @@
+@charset "UTF-8";
+.top-wrap {
+  position: relative;
+  background-image: url(../img/7432d5ae556a59c3c9a397a3cfa35298bb3fdf27.jpg);
+  background-position: center;
+  background-size: cover;
+  padding: 150px 0;
+  isolation: isolate; /* 念のため。擬似要素の重なりを安定させる */
+}
+
+/* オーバーレイ */
+.top-wrap::after {
+  content: "";
+  position: absolute;
+  inset: 0;               /* top:0; right:0; bottom:0; left:0 の省略形 */
+  background: rgba(0,0,0,0.4);   /* または background: #000000B3; */
+  pointer-events: none;   /* クリックをブロックしない */
+  z-index: 0;             /* 背景として最下層に */
+}
+
+/* 文字はオーバーレイより前面に */
+.top-wrap__title {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  text-align: center;
+  width: 100%;
+  top: 40%;
+}
+
+.top-wrap__title h2 {
+  font-size: 32px;
+  font-weight: 500;
+}
+
+/*メッセージセクション!*/
+.mes-wrap {
+  margin:60px auto;
+}
+.title {
+    width:25%;
+    font-family: "Rajdhani", sans-serif;
+    line-height: 1.5;
+    display: block;
+  }
+  .title h3 {
+    font-weight: 600;
+    font-style: normal;
+    font-size:32px;
+    color: #004FA4;
+  }
+  .title p {
+    font-size:18px;
+    font-weight: bold;
+    border-left:5px solid #004FA4; /*線の設定*/
+    padding:2px 5px;
+    line-height: 0.8;
+  }
+  .mes-wrap__body {
+    margin:60px auto;
+    display:flex;
+    width:100%;
+    justify-content: space-between;
+  }
+  .mes-wrap__body__left {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .mes-wrap__body__txt {
+    font-weight: 400;
+  }
+  .mes-wrap__body__right {
+    width:36%;
+  }
+  .mes-wrap__body__right img{
+    width:100%;
+    aspect-ratio: 18 / 25;
+    object-fit:cover;
+  }
+  .mes-wrap__body__txt__name {
+    margin-left: auto;       
+    inline-size: max-content; 
+    text-align: left;
+    font-weight: 400;
+    display: block;         
+  }
+  
+<<<<<<< HEAD
+  
+=======
+  /* 会社概要セクション */
+  .pro-wrap {
+    margin: 60px auto;
+    background-color: #fff;
+    padding:4% 2%;
+  }
+  .pro-wrap__body {
+    margin-top:60px;
+  }
+  .pro-wrap__body__table{
+  width: 100%;
+  border-collapse: separate;      /* ← border-spacing を効かせるため */
+  border-spacing: 20px;         /* ← 行と行の“間”を空ける（縦だけ） */
+  table-layout: fixed;            /* 長文でもレイアウトが安定 */
+}
+
+/* 左列=見出し、右列=本文 */
+.pro-wrap__body__table th,
+.pro-wrap__body__table td{
+  padding:16px 0;             /* ← 余白はセル側に入れる */
+  vertical-align:middle;
+  background: #fff;               /* 行の箱感を出す */
+  word-break: break-word;
+}
+.pro-wrap__body__table th{
+  width: 10em;                    /* 左列の固定幅（調整可） */
+  white-space: nowrap;
+  font-weight: 600;
+  color: #0a0a0a;
+}
+
+/* 行のカード風（影や角丸は好みで） */
+.pro-wrap__body__table tr{
+  border-bottom:#004FA4 1px solid;
+}
+
+/* 青字の強調 */
+.pro-wrap__body__table .blue{
+  color: #004FA4;
+  font-weight: 500;
+}
+>>>>>>> 1f6cb43 (‘message’)

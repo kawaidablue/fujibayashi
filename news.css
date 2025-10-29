@@ -1,0 +1,97 @@
+@charset "UTF-8";
+.top-wrap {
+  position: relative;
+  background-image: url(../img/7432d5ae556a59c3c9a397a3cfa35298bb3fdf27.jpg);
+  background-position: center;
+  background-size: cover;
+  padding: 150px 0;
+  isolation: isolate; /* 念のため。擬似要素の重なりを安定させる */
+}
+
+/* オーバーレイ */
+.top-wrap::after {
+  content: "";
+  position: absolute;
+  inset: 0;               /* top:0; right:0; bottom:0; left:0 の省略形 */
+  background: rgba(0,0,0,0.4);   /* または background: #000000B3; */
+  pointer-events: none;   /* クリックをブロックしない */
+  z-index: 0;             /* 背景として最下層に */
+}
+
+/* 文字はオーバーレイより前面に */
+.top-wrap__title {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  text-align: center;
+  width: 100%;
+  top: 40%;
+}
+
+.top-wrap__title h2 {
+  font-size: 32px;
+  font-weight: 500;
+}
+/*newsセクション*/
+.news-wrap {
+  padding:60px 0 60px 0;
+  margin: 0 auto;
+  display:flex;
+  justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;  
+}
+.news-wrap__body {
+  width:100%;
+}
+.news-wrap__body__list {
+  width:100%;
+}
+.news-wrap__body__list__item {
+  display:flex;
+  width:100%;
+  border-bottom:1px solid #D3D3D3; /*線の設定*/
+}
+.news-wrap__body__list__item__date {
+        display:flex;
+align-items: center;
+justify-content: center;
+  width:20%;
+  padding-top:4%;
+  padding-bottom:4%;
+  border-bottom:1px solid #004FA4;
+  font-weight:400;
+  color: #004FA4;
+  text-align: center;
+}
+.news-wrap__body__list__item__kind {
+            display:flex;
+align-items: center;
+justify-content: center;
+  width:20%;
+  padding-top:3%;
+  padding-bottom:3%;
+  font-weight:400;
+  color: #004FA4;
+  text-align: center;
+}
+.news-wrap__body__list__item__txt {
+display:flex;
+align-items: center;
+  width:60%;
+  padding-bottom:3%;
+  padding: 0 20px;
+  font-weight: 500;
+}
+.news-wrap__body__more{
+    text-align: center;
+    margin: 60px auto 40px auto;
+}
+.news-wrap__body__more a{
+    font-size: 14px;;
+    text-decoration: none;
+    color: #004FA4;
+    border:#D3D3D3 1px solid;
+    padding: 15px 30px;
+}

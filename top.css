@@ -1,0 +1,436 @@
+@charset "UTF-8";
+  /* topsection */
+.top-wrap{
+    width: 100%;
+    height: 91vh;
+    position: relative;             
+    overflow: hidden;               
+}
+  .top-wrap__video{
+    position: relative;           
+    width: 100%;
+    height: 100%;
+  }
+.top-wrap::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    /* 透明～薄い青のグラデで軽くクールトーン */
+    background:radial-gradient(ellipse at center, rgba(20,40,120,0.4), rgba(10,20,80,0.4));
+    pointer-events: none;
+    z-index: 1;
+}
+.top-wrap__video video{
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter:
+      brightness(1.06)
+      contrast(1)
+      saturate(1.15)
+      sepia(0.10)
+      hue-rotate(12deg); 
+  }
+
+  .top-wrap__title{
+    left:4%;
+    position: absolute;
+    bottom:5%;
+    z-index: 2;                     
+    color: #fff;
+    text-shadow: 1px 2px 3px #454545;
+  }
+  .top-wrap__title h1{
+    font-size:48px;
+    font-family: "Shippori Mincho B1", serif;
+    font-weight:bold;
+    font-style: normal;
+  }
+  .top-wrap__title h1 small{
+    font-size:20px;
+    display: block;
+    margin-top: .5em;
+    font-weight: bold;
+  }
+/* newsセクション */
+.news {
+  background-color: #fff;
+}
+.news-wrap {
+  padding:60px 0 60px 0;
+  margin: 0 auto;
+  display:flex;
+  justify-content: space-between;
+    display: flex;
+  justify-content: space-between;
+  align-items: flex-start;  
+}
+.new-wrap__title {
+  width:25%;
+  font-family: "Rajdhani", sans-serif;
+  line-height: 1.5;
+  display: block;
+}
+.new-wrap__title h3 {
+  font-weight: 600;
+  font-style: normal;
+  font-size:32px;
+  color: #004FA4;
+}
+.new-wrap__title p {
+  font-size:18px;
+  font-weight: bold;
+  border-left:5px solid #004FA4; /*線の設定*/
+  padding:2px 5px;
+  line-height: 0.8;
+}
+.news-wrap__body {
+  width:70%;
+}
+.news-wrap__body__list {
+  width:100%;
+}
+.news-wrap__body__list__item {
+  display:flex;
+  width:100%;
+  border-bottom:1px solid #D3D3D3; /*線の設定*/
+}
+.news-wrap__body__list__item:last-child{
+  padding-top:3%;
+}
+.news-wrap__body__list__item__date {
+  width:20%;
+  padding-bottom:3%;
+  border-bottom:1px solid #004FA4;
+  font-weight:400;
+  color: #004FA4;
+  text-align: center;
+  padding-right:20px;
+}
+.news-wrap__body__list__item__txt {
+  width:80%;
+  padding-bottom:3%;
+  padding: 0 20px;
+  font-weight: 500;
+}
+.news-wrap__body__btn {
+  display: flex;
+  justify-content:flex-end;
+  padding:40px 0 0 0;
+}
+.news-wrap__body__btn a {
+  font-size:14px;
+  position: relative;
+  text-align: left;
+  padding: 1.5% 5% 1.5% 3.2%;
+  color:#004FA4;
+  text-decoration: none;
+  border: 1px solid#D3D3D3;
+}
+.news-wrap__body__btn a::after{
+    content: '';
+    display: inline-block;
+    border-style: solid;
+    border-width: 8px 0 8px 8px;
+    border-color: transparent transparent transparent #004FA4;
+    display: inline-block;
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 52%;
+    right:14px;
+    transform: translateY(-50%);
+}
+/* aboutセクション */
+.about-wrap {
+  margin: 60px auto;
+}
+.about-wrap__title {
+  font-family: "Rajdhani", sans-serif;
+  line-height: 1.5;
+  display: block;
+}
+.about-wrap__title h3 {
+  font-weight: 600;
+  font-style: normal;
+  font-size:32px;
+  color: #004FA4;
+}
+.about-wrap__body {
+  display:flex;
+  margin: 40px auto;
+  justify-content: center;
+  gap:50px;
+}
+.about-wrap__body__left{
+width:55%;
+ display:flex;
+  flex-flow: column;
+  justify-content:space-between;
+}
+.about-wrap__body__left__txt {
+  width:100%;
+  line-height: 38px;
+}
+.about-wrap__body__left__btn {
+  display:flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  border-bottom: 1px solid #000000;
+}
+.about-wrap__body__left__btn a {
+  font-size:14px;
+  position: relative;
+  text-align: left;
+  padding: 2% 3.5% 2% 2%;
+  color:#004FA4;
+  text-decoration: none;
+}
+.about-wrap__body__left__btn a::after{
+    content: '';
+    display: inline-block;
+    border-style: solid;
+    border-width: 5px 0 5px 8px;
+    border-color: transparent transparent transparent #004FA4;
+    display: inline-block;
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 52%;
+    right:0;
+    transform: translateY(-50%);
+}
+.about-wrap__body__right {
+  width:45%;
+}
+.about-wrap__body__right img{
+  object-fit:cover;
+  object-position:75%;
+  width:100%;
+  aspect-ratio: 1/1;
+}
+
+/*serviceセクション*/
+.service{
+  background-color: #256292;
+}
+.service-wrap {
+  padding: 60px 0 80px 0;
+}
+.service-wrap__top {
+  margin: 0 auto 40px auto;
+  display:flex;
+  justify-content: space-between;
+  align-items: flex-start;  
+}
+.service-wrap__top__title {
+  width:35%;
+  font-family: "Rajdhani", sans-serif;
+  line-height: 1.5;
+  display: block;
+}
+.service-wrap__top__title h3 {
+  font-weight: 600;
+  font-style: normal;
+  font-size:32px;
+  color: #ffffff;
+}
+.service-wrap__top__title p {
+  color:#fff;
+  font-size:16px;
+  font-weight: bold;
+  border-left:5px solid #ffffff; /*線の設定*/
+  padding:5px 5px;
+  line-height: 0.8;
+}
+.service-wrap__top__txt {
+  width:65%;
+}
+.service-wrap__top__txt p {
+  font-weight:500;
+  color:#fff;
+  font-size:20px;
+}
+.service-wrap__under__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3列均等 */
+  grid-template-rows: repeat(2, 1fr);    /* 2行均等 */
+  width: 100%;
+  height: 100%;
+  gap: 1px;
+  background-color: #D3D3D3;
+}
+.service-wrap__under__grid__item {
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height:340px;
+}
+
+/*事業内容写真!*/
+.Chimney_Asbestos_Removal {
+  background: center / cover no-repeat url(../img/アスベストback.png);
+}
+.Asbestos_Wall_Coating_Removal {
+  background: center / cover no-repeat url(../img/アスベストback.png);
+}
+.Sprayed_Asbestos_Abatement_System {
+  background: center / cover no-repeat url(../img/吹付back.png);
+}
+.Dioxin_Decontamination {
+  background: center / cover no-repeat url(../img/daiokisin.png);
+}
+.Ultra-High-Pressure_Water_Jetting {
+  background: center / cover no-repeat url(../img/jetback.png);
+}
+.Corrosion_Waterproofing_Solutions {
+  background: center / cover no-repeat url(../img/updownback.png);
+}
+/**/
+
+.service-wrap__under__grid__item{
+  padding:50px 30px 20px 30px;
+}
+.service-wrap__under__grid__item__head h5 {
+  font-size:20px;
+  font-weight: bold;
+  color:#fff;
+  line-height: 1.4;
+}
+.service-wrap__under__grid__item__head h5 small {
+  font-size:12px;
+  font-weight: 500;
+  color:#D3D3D3;
+}
+.service-wrap__under__grid__item__btn {
+  text-align: end;
+  border-bottom:solid 1px#fff;
+  padding-bottom:8px;
+}
+.service-wrap__under__grid__item__btn a {
+  position: relative;
+  padding: 2% 7% 2% 2%;
+  font-size: 12px;
+  color: #fff;
+  text-decoration: none;
+}
+.service-wrap__under__grid__item__btn a::after{
+  content: '';
+  display: inline-block;
+  border-style: solid;
+  border-width: 5px 0 5px 8px;
+  border-color: transparent transparent transparent #ffffff;
+  display: inline-block;
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 52%;
+  right:0;
+  transform: translateY(-50%);
+}
+
+/*contactセクション*/
+.contact-wrap {
+  padding:60px 0 60px 0;
+}
+.contact-wrap__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.contact-wrap__top__title {
+  width:25%;
+  font-family: "Rajdhani", sans-serif;
+  line-height: 1.5;
+  display: block;
+}
+.contact-wrap__top__title h3 {
+  font-weight: 600;
+  font-style: normal;
+  font-size:32px;
+  color: #004FA4;
+}
+.contact-wrap__top__title p {
+  font-size:18px;
+  font-weight: bold;
+  border-left:5px solid #004FA4; /*線の設定*/
+  padding:2px 5px;
+  line-height: 0.8;
+}
+.contact-wrap__top__txt {
+  font-size: 20px;
+  font-weight: 500;
+}
+.contact-wrap__under {
+  display: flex;
+  margin:40px auto;
+  justify-content: space-between;
+}
+.contact-wrap__under__mail {
+  width:45%;
+  padding:55px 10px;
+  border:#D3D3D3 solid 1px;
+}
+.contact-wrap__under__mail p{
+  font-weight: 500;
+  font-size: 20px;
+  text-align: center;
+}
+.contact-wrap__under__tel {
+  width:45%;
+  padding:55px 10px;
+  border:#D3D3D3 solid 1px;
+}
+.contact-wrap__under__mail__btn {
+  margin-top:20px;
+  text-align: center;
+}
+.contact-wrap__under__mail__btn a {
+  text-decoration: none;
+  color:#fff;
+  background-color: #0368B8;
+  padding:15px 30px;
+}
+.contact-wrap__under__tel__txt{
+  font-weight: 500;
+  color:#2A2A2A;
+  font-size:20px;
+}
+.contact-wrap__under__tel a {
+  font-family: "Rajdhani", sans-serif;
+  font-size: 32px;
+  color:#004FA4;
+  font-weight: 600;
+}
+.contact-wrap__under__tel__time{
+  font-weight: 500;
+  color:#2A2A2A;
+  font-size:16px;
+}
+.fa-contact {
+  font-size: 20px;
+  font-family: "Font Awesome 6 Free" !important;
+  font-weight: 900 !important;
+}
+.fa-envelope::before {
+  content: "\f0e0" !important;  /* 封筒アイコンのコードポイント */
+}
+.contact-wrap__under__tel {
+  text-align: center;
+}
+.banar {
+  border-color: solid 1px #fff;
+}
+.banar-wrap {
+  max-width:850px;
+  margin: 40px auto;
+}
+.banar-wrap__body {
+  display:flex;
+  gap:50px;
+}
+.banar-wrap__body a {
+  width:250px;
+}
