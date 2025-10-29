@@ -111,6 +111,10 @@
   background: #fff;               /* 行の箱感を出す */
   word-break: break-word;
 }
+.pro-wrap__body__table td a{
+  color: #000000;
+  text-decoration: none;
+}
 .pro-wrap__body__table th{
   width: 10em;                    /* 左列の固定幅（調整可） */
   white-space: nowrap;
@@ -124,7 +128,16 @@
 }
 
 /* 青字の強調 */
-.pro-wrap__body__table .blue{
-  color: #004FA4;
-  font-weight: 500;
+.pro-wrap__body__table {
+  width: 100%;
+  border-collapse: collapse; /* 下線を1本に */
+}
+.pro-wrap__body__table td {
+  border-bottom: 1px solid #E5E7EB; /* 既定の下線色（薄グレー） */
+  padding: 12px 16px;
+}
+
+/* 「社名」行だけ下線色を変更 */
+.pro-wrap__body__table tr.company-name-row td {
+  border-bottom: 2px solid #2563EB; /* お好みの色に変更（例：ブルー） */
 }

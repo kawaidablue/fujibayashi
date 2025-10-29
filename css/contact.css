@@ -1,0 +1,198 @@
+@charset "UTF-8";
+.top-wrap {
+    position: relative;
+    background-image: url(../img/contact.png);
+    background-position: top;
+    background-size: cover;
+    padding: 150px 0;
+    isolation: isolate; /* 念のため。擬似要素の重なりを安定させる */
+}
+/* ===== フォーム全体 ===== */
+.contact-wrap {
+    margin: 60px auto;
+}
+.contact-wrap__txt {
+    margin: 0 auto 40px auto;
+    font-size: 16px;
+    line-height: 1.8;
+    color: #333;
+}
+.contact-wrap__body {
+    background-color: #fff;
+    padding:4%;
+}
+.form{
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+    font-size: 16px;
+    color: #333;
+}
+  /* 行レイアウト */
+.form__item{
+    display: grid;
+    grid-template-columns: 220px 1fr; /* 左：ラベル / 右：入力 */
+    gap: 16px;
+    align-items: start;
+    padding: 16px 0;
+    border-bottom: 1px solid #D3D3D3; /* 全体の区切り線はグレーのまま */
+}
+  
+  /* ラベル（項目名） */
+  .form__name{
+    display: inline-block;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+  
+  /* 必須マーク */
+  .required{
+    color: #d12f2f;
+    margin-left: 6px;
+    font-weight: 700;
+  }
+  
+  /* テキスト/メール/電話入力 */
+  .form__input{
+    width: 100%;
+    height: 44px;
+    padding: 0 12px;
+    border: 1px solid #D3D3D3;
+    box-sizing: border-box;
+    background: #fff;
+    transition: border-color .15s ease, box-shadow .15s ease;
+    outline: none;
+  }
+  
+  /* セレクト */
+  .form__select select{
+    width: 100%;
+    height: 44px;
+    padding: 0 40px 0 12px;          /* 右は矢印ぶん */
+    border: 1px solid #D3D3D3;
+    box-sizing: border-box;
+    background: #fff;
+    -webkit-appearance: none;
+    appearance: none;
+    outline: none;
+    transition: border-color .15s ease, box-shadow .15s ease;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23004FA4' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 16px 16px;
+  }
+  
+  /* テキストエリア */
+  .form__textarea{
+    width: 100%;
+    min-height: 160px;
+    padding: 12px;
+    border: 1px solid #D3D3D3;
+    box-sizing: border-box;
+    resize: vertical;
+    background: #fff;
+    transition: border-color .15s ease, box-shadow .15s ease;
+    outline: none;
+  }
+  
+  /* フォーカス */
+  .form__input:focus,
+  .form__textarea:focus,
+  .form__select select:focus{
+    border-color: #004FA4;
+    box-shadow: 0 0 0 3px rgba(0,79,164,0.15);
+  }
+  
+  /* プレースホルダ色 */
+  .form__input::placeholder,
+  .form__textarea::placeholder{
+    color: #999;
+  }
+  
+  /* エラーメッセージ */
+  .form__error-msg{
+    margin: 6px 0 0 0;
+    font-size: 13px;
+    color: #c62828;
+  }
+  
+  /* エラー状態（JS側で .is-invalid を付与して使う想定） */
+  .is-invalid{
+    border-color: #c62828 !important;
+    box-shadow: 0 0 0 3px rgba(198,40,40,0.12) !important;
+  }
+  
+  /* プライバシーポリシーチェック */
+  .form__policy-check{
+    text-align: center;
+    grid-column: 1 / -1;  /* 2カラムをまたぐ */
+    margin: 20px 0 0 0;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  .policy {
+    margin-left: 8px;
+  }
+  .form__policy-check a{
+    color: #004FA4;
+    text-decoration: underline;
+  }
+  .form__checkbox{
+    text-align: center;
+    width: 18px;
+    height: 18px;
+    margin-left: 8px;
+    vertical-align: -3px;
+    accent-color: #004FA4; /* 対応ブラウザでチェック色を青に */
+  }
+  
+  /* 送信ボタン */
+  .form__btn{
+    grid-column: 1 / -1;
+    margin-top: 40px;
+    text-align: center;
+}
+  #button_default{
+    display: inline-block;
+    min-width: 240px;
+    height: 52px;
+    padding: 0 24px;
+    border: 1px solid #004FA4;
+    background: #004FA4;
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: .08em;
+    cursor: pointer;
+    transition: transform .06s ease, background-color .15s ease, border-color .15s ease, box-shadow .15s ease;
+}
+#button_default:hover{
+    background: #003a7a;
+    border-color: #003a7a;
+    box-shadow: 0 6px 16px rgba(0,79,164,0.25);
+}
+#button_default:active{
+    transform: translateY(1px);
+}
+
+  /* スマホ（px指定） */
+  @media (max-width: 768px){
+    .form{
+      padding: 0 16px;
+    }
+    .form__item{
+      grid-template-columns: 1fr; /* 縦積み */
+      gap: 8px;
+      padding: 12px 0;
+    }
+    .form__name{
+      margin-bottom: 2px;
+    }
+    .form__policy-check{
+      margin-top: 16px;
+    }
+    #button_default{
+      width: 100%;
+      min-width: 0;
+    }
+  }
+  
