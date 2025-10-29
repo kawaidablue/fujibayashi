@@ -87,4 +87,48 @@
     display: block;         
   }
   
+<<<<<<< HEAD
   
+=======
+  /* 会社概要セクション */
+  .pro-wrap {
+    margin: 60px auto;
+    background-color: #fff;
+    padding:4% 2%;
+  }
+  .pro-wrap__body {
+    margin-top:60px;
+  }
+  .pro-wrap__body__table{
+  width: 100%;
+  border-collapse: separate;      /* ← border-spacing を効かせるため */
+  border-spacing: 20px;         /* ← 行と行の“間”を空ける（縦だけ） */
+  table-layout: fixed;            /* 長文でもレイアウトが安定 */
+}
+
+/* 左列=見出し、右列=本文 */
+.pro-wrap__body__table th,
+.pro-wrap__body__table td{
+  padding:16px 0;             /* ← 余白はセル側に入れる */
+  vertical-align:middle;
+  background: #fff;               /* 行の箱感を出す */
+  word-break: break-word;
+}
+.pro-wrap__body__table th{
+  width: 10em;                    /* 左列の固定幅（調整可） */
+  white-space: nowrap;
+  font-weight: 600;
+  color: #0a0a0a;
+}
+
+/* 行のカード風（影や角丸は好みで） */
+.pro-wrap__body__table tr{
+  border-bottom:#004FA4 1px solid;
+}
+
+/* 青字の強調 */
+.pro-wrap__body__table .blue{
+  color: #004FA4;
+  font-weight: 500;
+}
+>>>>>>> 1f6cb43 (‘message’)
