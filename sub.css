@@ -1,0 +1,52 @@
+@charset "UTF-8";
+.top-wrap::after {
+  content: "";
+  position: absolute;
+  inset: 0;               /* top:0; right:0; bottom:0; left:0 の省略形 */
+  background: rgba(0,0,0,0.4);   /* または background: #000000B3; */
+  pointer-events: none;   /* クリックをブロックしない */
+  z-index: 0;             /* 背景として最下層に */
+}
+.top-wrap__title {
+    position: relative;
+    z-index: 1;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+    top: 40%;
+  }
+  
+  .top-wrap__title h2 {
+    font-size: 32px;
+    font-weight: 500;
+  }
+  .breadcrumb {
+    width: 90%;
+    margin: 1.5% auto ;
+  }
+  
+  .breadcrumb-wrap__list {
+    display: flex;
+    text-decoration: none;
+    list-style: none;
+  }
+  
+  .breadcrumb-wrap__list__item {
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .breadcrumb-wrap__list__item a {
+    color:#004FA4;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .breadcrumb-wrap__list__item::after {
+    content: ">";
+    padding: 15px 15px;
+    font-size: 14px;
+    color:#004FA4;
+  }
+  
+  .breadcrumb-wrap__list__item:last-child::after {
+    content: "";
+  }
