@@ -1,0 +1,57 @@
+@charset "UTF-8";
+.top-wrap {
+  position: relative;
+  background-image: url(../img/7432d5ae556a59c3c9a397a3cfa35298bb3fdf27.jpg);
+  background-position: center;
+  background-size: cover;
+  padding: 150px 0;
+  isolation: isolate; /* 念のため。擬似要素の重なりを安定させる */
+}
+
+/* オーバーレイ */
+.top-wrap::after {
+  content: "";
+  position: absolute;
+  inset: 0;               /* top:0; right:0; bottom:0; left:0 の省略形 */
+  background: rgba(0,0,0,0.4);   /* または background: #000000B3; */
+  pointer-events: none;   /* クリックをブロックしない */
+  z-index: 0;             /* 背景として最下層に */
+}
+.rec-wrap {
+    margin: 120px auto;
+  }
+  .rec-wrap__body {
+    margin-top:20px;
+    background-color: #fff;
+    padding:2% 2%;
+  }
+  .rec-wrap__body__table{
+  width: 100%;
+  border-collapse:collapse;      /* ← border-spacing を効かせるため */
+  border-spacing: 20px;         /* ← 行と行の“間”を空ける（縦だけ） */
+  table-layout: fixed;            /* 長文でもレイアウトが安定 */
+}
+.rec-wrap__body__table tr {
+  border-bottom: 1px solid #D3D3D3; /*行の区切り線*/
+}
+/* 左列=見出し、右列=本文 */
+.rec-wrap__body__table th,
+.rec-wrap__body__table td{
+  padding:20px 0;             /* ← 余白はセル側に入れる */
+  vertical-align:middle;
+  background: #fff;               /* 行の箱感を出す */
+  word-break: break-word;
+}
+.rec-wrap__body__table th{
+  width: 10em;                    /* 左列の固定幅（調整可） */
+  white-space: nowrap;
+  font-weight: 600;
+  color: #0a0a0a;
+}
+.rec-wrap__body__table tbody tr:last-child {
+  border-bottom: none;
+}
+.rec-wrap__txt {
+  margin: 30px 30px 0 30px;
+  line-height: 1.8;
+}
