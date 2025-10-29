@@ -48,41 +48,84 @@
 .news-wrap__body__list {
   width:100%;
 }
+/* リスト全体のレイアウト */
+.news-wrap__body__list {
+  display: flex;
+  flex-direction: column;
+}
+
+/* 各アイテムのカード化 */
 .news-wrap__body__list__item {
-  display:flex;
-  width:100%;
-  border-bottom:1px solid #D3D3D3; /*線の設定*/
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid #D3D3D3;
 }
-.news-wrap__body__list__item__date {
-        display:flex;
+.news-wrap__body__list__item::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 1px;
+  width: 120px;                  /* 青線の長さ（お好みで） */
+  background-color: #004FA4;  
+  z-index: 20;  /* 青の色 */
+}
+
+/* 行全体をクリックターゲットに */
+.news-item__link {
+  display: grid;
+  grid-template-columns: 120px 90px 1fr; /* 日付 / 種別 / タイトル */
 align-items: center;
-justify-content: center;
-  width:20%;
-  padding-top:4%;
-  padding-bottom:4%;
-  border-bottom:1px solid #004FA4;
-  font-weight:400;
+  gap: 12px;    /* 右に余白→疑似ボタンのぶん */
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  padding:30px 10px;
+}
+
+/* 右端の“丸ボタン風”装飾（疑似要素） */
+.news-item__link::after {
+  content: ">";                        /* シンプルに矢印。SVGにしたい場合は下に例あり */
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  border: 1px solid #333;
+  display: grid;
+  place-items: center;
+  font-size: 18px;
+  transition: transform .18s ease, background-color .18s ease, color .18s ease, border-color .18s ease;
+}
+
+/* ホバー / フォーカスのフィードバック（アクセシビリティ） */
+.news-item__link:hover,
+.news-item__link:focus-visible {
+  background: #fafafa;
+  outline: none;
+}
+
+.news-item__link:hover::after,
+.news-item__link:focus-visible::after {
+  transform: translateY(-50%) scale(1.06);
+  background: #004FA4;;
+  color: #fff;
+  border-color: #004FA4;
+}
+.news-wrap__body__list__item__kind  {
+  font-size: 14px;
   color: #004FA4;
   text-align: center;
 }
-.news-wrap__body__list__item__kind {
-            display:flex;
-align-items: center;
-justify-content: center;
-  width:20%;
-  padding-top:3%;
-  padding-bottom:3%;
-  font-weight:400;
-  color: #004FA4;
-  text-align: center;
-}
-.news-wrap__body__list__item__txt {
-display:flex;
-align-items: center;
-  width:60%;
-  padding-bottom:3%;
-  padding: 0 20px;
-  font-weight: 500;
+/* 小さめ端末での崩れ対策 */
+@media (max-width: 600px) {
+  .news-item__link {
+    grid-template-columns: 1fr;        /* 縦積み */
+    gap: 6px;
+    padding-right: 56px;               /* 疑似ボタンのぶんだけ確保 */
+  }
 }
 .news-wrap__body__more{
     text-align: center;
