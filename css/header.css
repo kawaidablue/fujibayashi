@@ -189,3 +189,15 @@ body.is-nav-open .header-drawer__top { display: block; }
         width: 100vw;
     }
 }
+@media (max-width:420px){
+    .pagination a, .pagination span {
+        min-width: 20px;
+        height: 20px;
+        line-height: 20px;
+        padding: 0 10px;
+        font-size: 14px;
+    }
+    .pagination {
+        gap: 4px;
+    }
+}
