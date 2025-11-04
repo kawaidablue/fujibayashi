@@ -676,7 +676,6 @@ width:55%;
   .news-wrap__body__btn a {
       padding: 3% 8% 3% 5%;
   }
-}
 .news-wrap__body__btn a::after {
   top: 50%;
   right: 8px;
@@ -726,10 +725,10 @@ width:55%;
       margin: 20px auto 0 auto;
 }
 .contact-wrap__under__mail {
-  width: 80%;
+  width: 90%;
 }
 .contact-wrap__under__tel {
-  width: 80%;
+  width: 90%;
 }
 .banar-wrap {
   width: 80%;
@@ -748,4 +747,5 @@ width:55%;
   width: 100%;
   margin: 0 auto;
   text-align: center;
+}
 }
