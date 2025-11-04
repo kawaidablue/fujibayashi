@@ -1,12 +1,35 @@
 @charset "UTF-8";
   /* topsection */
+.top-wrap video{
+  opacity: 0;
+  transform: translateX(40px);
+  transition: 1.0s;
+}
+.top-wrap__title{
+  color:#FFF;
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: 1.0s;
+  transition-delay: 1.0s;
+}
+
+/* ← ここがポイント：親の .top-wrap に .show が付いたら有効にする */
+.top-wrap.show video{
+  opacity: 1;
+  transform: translateX(0);
+}
+.top-wrap.show .top-wrap__title{
+  opacity: 1;
+  transform: translateX(0);
+}
+
 .top-wrap{
     width: 100%;
     height: 91vh;
     position: relative;             
     overflow: hidden;               
 }
-  .top-wrap__video{
+.top-wrap__video{
     position: relative;           
     width: 100%;
     height: 100%;
@@ -67,19 +90,19 @@
   justify-content: space-between;
   align-items: flex-start;  
 }
-.new-wrap__title {
+.news-wrap__title {
   width:25%;
   font-family: "Rajdhani", sans-serif;
   line-height: 1.5;
   display: block;
 }
-.new-wrap__title h3 {
+.news-wrap__title h3 {
   font-weight: 600;
   font-style: normal;
   font-size:32px;
   color: #004FA4;
 }
-.new-wrap__title p {
+.news-wrap__title p {
   font-size:18px;
   font-weight: bold;
   border-left:5px solid #004FA4; /*線の設定*/
@@ -158,6 +181,13 @@
   font-size:32px;
   color: #004FA4;
 }
+.about-wrap__title p {
+  font-size:18px;
+  font-weight: bold;
+  border-left:5px solid #004FA4; /*線の設定*/
+  padding:2px 5px;
+  line-height: 0.8;
+}
 .about-wrap__body {
   display:flex;
   margin: 40px auto;
@@ -210,8 +240,8 @@ width:55%;
   object-position:75%;
   width:100%;
   aspect-ratio: 1/1;
+  box-shadow: 20px 20px 0px rgba(133, 133, 133, 0.6);
 }
-
 /*serviceセクション*/
 .service{
   background-color: #256292;
@@ -268,7 +298,6 @@ width:55%;
   justify-content: space-between;
   height:340px;
 }
-
 /*事業内容写真!*/
 .Chimney_Asbestos_Removal {
   background: center / cover no-repeat url(../img/アスベストback.png);
@@ -330,7 +359,6 @@ width:55%;
   right:0;
   transform: translateY(-50%);
 }
-
 /*contactセクション*/
 .contact-wrap {
   padding:60px 0 60px 0;
@@ -433,4 +461,186 @@ width:55%;
 }
 .banar-wrap__body a {
   width:250px;
+}
+.banar-wrap__body a:hover img {
+  transform: scale(1.05);
+}
+
+.banar-wrap__body a img {
+  height:auto;
+  transition: transform .4s ease;
+  box-shadow: #898989 1px 4px 6px;
+}
+@media (max-width:1100px){
+  .top-wrap {
+    width: 100%;
+    height: 60vh;
+    position: relative;
+    overflow: hidden;
+}
+  .news-wrap__title {
+  width:20%;
+  line-height: 1.5;
+  display: block;
+}
+.news-wrap__body {
+  width:77%;
+}
+  .about-wrap__body {
+    gap: 30px;
+}
+.about-wrap__body__left {
+    width: 45%;
+}
+.about-wrap__body__left__txt {
+    line-height: 32px;
+}
+.about-wrap__body__right {
+    width: 50%;
+}
+  .service-wrap__under__grid__item {
+    padding: 40px 20px 20px 20px;
+}
+.service-wrap__under__grid__item {
+    height: 280px;
+}
+.service-wrap__under__grid__item__head h5 {
+    font-size: 16px;
+    line-height: 1.5;
+}
+.service-wrap__under__grid__item__head h5 small {
+    font-size: 10px;
+}
+  .contact-wrap__top__title {
+    width: 20%;
+}
+  .contact-wrap__top__txt {
+    font-size: 18px;
+    font-weight: 500;
+}
+.contact-wrap__under__mail {
+    padding: 40px 5px;
+}
+.contact-wrap__under__mail p {
+    font-size: 18px;
+}
+.contact-wrap__under__tel {
+    padding: 40px 5px;
+}
+.contact-wrap__under__tel__txt {
+    font-size: 18px;
+}
+.contact-wrap__under__tel a {
+    font-size: 28px;
+}
+.contact-wrap__under__tel__time {
+    font-size: 14px;
+}
+.banar-wrap__body a {
+  width:200px;
+}
+.banar-wrap__body {
+  display:flex;
+}
+.banar-wrap {
+  max-width:700px;
+  margin: 20px auto;
+}
+.banar-wrap__body a img {
+  width:100%;
+  height:auto;
+}
+}
+@media (max-width:800px){
+  .news-wrap {
+    flex-direction: column;
+  }
+  .news-wrap__body {
+        width: 100%;
+        margin:40px auto;
+    }
+    .news-wrap__body__list__item__date {
+    width: 30%;
+}
+.about-wrap__body {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;    
+}
+    .about-wrap__body__right {
+        width: 80%;
+    }
+    .about-wrap__body__right img {
+    object-fit: cover;
+    object-position: 75%;
+    width: 100%;
+    aspect-ratio: auto;
+    box-shadow: 20px 20px 0px rgba(133, 133, 133, 0.6);
+}
+.about-wrap__body__left {
+  width: 100%;
+}
+.service-wrap__top {
+    margin: 0 auto 40px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+}
+.service-wrap__top__txt {
+    width: 100%;
+    margin-top: 20px;
+}
+.service-wrap__top__txt p {
+    font-weight: 400;
+    font-size: 18px;
+}
+.service-wrap__top__title{
+    width: 100%;
+}
+.service-wrap__under__grid__item {
+  padding:20px 10px 10px 10px;
+  height: auto;
+  aspect-ratio: 5 / 7;
+    }
+.contact-wrap {
+    padding: 40px 0 40px 0;
+}
+.contact-wrap__top {
+    flex-direction: column;
+    align-items: flex-start;
+}
+.contact-wrap__top__title {
+    width: 100%;
+}
+.contact-wrap__top__txt {
+    margin-top: 20px;
+    font-weight: 400;
+    }
+.contact-wrap__under__mail p {
+        font-size: 16px;
+    }
+.contact-wrap__under__mail__btn{
+    font-size: 14px;
+}
+.contact-wrap__under__mail__btn a {
+    padding: 10px 20px;
+}
+.contact-wrap__under__mail {
+        padding: 30px 1%;
+        line-height: 1.4;
+    }
+.contact-wrap__under__tel {
+        padding: 30px 1%;
+        line-height: 1.5;
+    }
+    .contact-wrap__under__tel__txt {
+        font-size: 16px;
+    }
+      .contact-wrap__under__tel__time {
+        font-size: 12px;
+    }
+        .contact-wrap__under__tel a {
+        font-size: 24px;
+    }
 }
