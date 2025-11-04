@@ -91,15 +91,11 @@
                         <div class="news-wrap__body">
                             <ul class="news-wrap__body__list">
                                 <li class="news-wrap__body__list__item">
-                                    <p class="news-wrap__body__list__item__date">
-                                        YYYY.MM DD
-                                    </p>
-                                    <p class="news-wrap__body__list__item__kind">
-                                        メディア
-                                    </p>
-                                    <p class="news-wrap__body__list__item__txt">
-                                        ここにタイトルが入ります
-                                    </p>
+                                    <div class="news-item__head">
+                                        <p class="news-wrap__body__list__item__date">2025.10.29</p>
+                                        <p class="news-wrap__body__list__item__kind">メディア</p>
+                                    </div>
+                                    <p class="news-wrap__body__list__item__txt">ここにタイトルが入ります</p>
                                 </li>
                             </ul>
                         </div>
@@ -114,6 +110,22 @@
                     </div>
                 </div>
             </section>
+            <script>
+                (function(){
+                    const btn  = document.getElementById('hamburger');
+                    const nav  = document.getElementById('global-nav');
+                    const ovl  = document.getElementById('navOverlay');
+                    function toggle(open){
+                        const willOpen = (open !== undefined) ? open : !document.body.classList.contains('is-nav-open');
+                        document.body.classList.toggle('is-nav-open', willOpen);
+                        btn.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+                        document.body.style.overflow = willOpen ? 'hidden' : ''; // スクロール固定
+                        }
+                        btn.addEventListener('click', () => toggle());
+                        ovl.addEventListener('click', () => toggle(false));
+                        window.addEventListener('keydown', (e) => { if(e.key === 'Escape') toggle(false); });
+                        })();
+                </script>
             <footer class="footer" id="footer">
                 <div class="footer-wrap">
                     <div class="footer-wrap__left">
