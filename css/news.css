@@ -53,7 +53,13 @@
   display: flex;
   flex-direction: column;
 }
-
+.news-item__head {
+  display: flex;
+  width:30%;
+}
+.news-wrap__body__list__item__date {
+  width:50%;
+}
 /* 各アイテムのカード化 */
 .news-wrap__body__list__item {
   position: relative;
@@ -73,10 +79,7 @@
 
 /* 行全体をクリックターゲットに */
 .news-item__link {
-  display: grid;
-  grid-template-columns: 120px 90px 1fr; /* 日付 / 種別 / タイトル */
-align-items: center;
-  gap: 12px;    /* 右に余白→疑似ボタンのぶん */
+  display: flex;
   text-decoration: none;
   color: inherit;
   position: relative;
@@ -119,22 +122,30 @@ align-items: center;
   color: #004FA4;
   text-align: center;
 }
-/* 小さめ端末での崩れ対策 */
-@media (max-width: 600px) {
+.news-wrap__body__more {
+  text-align: center;
+  margin-top: 40px;
+}
+.news-wrap__body__more a {
+  display: inline-block;
+  padding: 12px 30px;
+  border: 1px solid #D3D3D3;
+  text-decoration: none;
+  color: #004FA4;
+  transition: background-color .18s ease, color .18s ease, border-color .18s ease;
+}
+@media (max-width:800px){
   .news-item__link {
-    grid-template-columns: 1fr;        /* 縦積み */
-    gap: 6px;
-    padding-right: 56px;               /* 疑似ボタンのぶんだけ確保 */
+    flex-direction: column;
+    padding: 30px 10px 20px 10px;
   }
+  .news-wrap__body__list__item__txt {
+    margin-top: 10px;
+  }
+  .news-item__head {
+    width: 100%;
+  }
+  .news-wrap__body__list__item__date {
+    width: 30%;
 }
-.news-wrap__body__more{
-    text-align: center;
-    margin: 60px auto 40px auto;
-}
-.news-wrap__body__more a{
-    font-size: 14px;;
-    text-decoration: none;
-    color: #004FA4;
-    border:#D3D3D3 1px solid;
-    padding: 15px 30px;
 }

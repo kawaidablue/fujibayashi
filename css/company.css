@@ -38,7 +38,7 @@
   margin:60px auto;
 }
 .title {
-    width:25%;
+    width:100%;
     font-family: "Rajdhani", sans-serif;
     line-height: 1.5;
     display: block;
@@ -87,9 +87,6 @@
     display: block;         
   }
   
-<<<<<<< HEAD
-  
-=======
   /* 会社概要セクション */
   .pro-wrap {
     margin: 60px auto;
@@ -101,7 +98,7 @@
   }
   .pro-wrap__body__table{
   width: 100%;
-  border-collapse:collapse;      /* ← border-spacing を効かせるため */
+  border-collapse: separate;      /* ← border-spacing を効かせるため */
   border-spacing: 20px;         /* ← 行と行の“間”を空ける（縦だけ） */
   table-layout: fixed;            /* 長文でもレイアウトが安定 */
 }
@@ -113,6 +110,10 @@
   vertical-align:middle;
   background: #fff;               /* 行の箱感を出す */
   word-break: break-word;
+}
+.pro-wrap__body__table td a{
+  color: #000000;
+  text-decoration: none;
 }
 .pro-wrap__body__table th{
   width: 10em;                    /* 左列の固定幅（調整可） */
@@ -127,8 +128,107 @@
 }
 
 /* 青字の強調 */
-.pro-wrap__body__table .blue{
-  color: #004FA4;
-  font-weight: 500;
+.pro-wrap__body__table {
+  width: 100%;
+  border-collapse: collapse; /* 下線を1本に */
 }
->>>>>>> 1f6cb43 (‘message’)
+.pro-wrap__body__table td {
+  border-bottom: 1px solid #E5E7EB; /* 既定の下線色（薄グレー） */
+  padding: 20px 16px;
+  position: relative;
+}
+.pro-wrap__body__table td:first-child::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 1px;
+  width: 247px;                  /* 青線の長さ（お好みで） */
+  background-color: #004FA4;  
+  z-index: 20;  /* 青の色 */
+}
+@media (max-width:1100px){
+  .pro-wrap__body__table td:first-child::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    width: 200px;
+    background-color: #004FA4;
+    z-index: 20;
+}
+}
+@media (max-width: 800px) {
+  /* テーブル要素をブロック化して縦積みに */
+  .pro-wrap__body__table,
+  .pro-wrap__body__table tbody,
+  .pro-wrap__body__table tr,
+  .pro-wrap__body__table td {
+    display: block;
+    width: 100%;
+  }
+
+  /* 行ごとのカード感 */
+  .pro-wrap__body__table tr {
+    padding: 16px 0;
+    border-bottom: 1px solid #E5E7EB; /* 行区切り */
+  }
+
+  /* 左セル（見出し）を上段に */
+  .pro-wrap__body__table td:first-child {
+    font-weight: 500;
+    color: #004FA4;
+    padding: 0 0 6px;
+    background: transparent;
+    border-bottom: none;
+    white-space: nowrap; /* 長すぎる見出しが折れてもOKなら削除 */
+  }
+
+  /* 右セル（本文）はすぐ下に続ける */
+  .pro-wrap__body__table td:last-child {
+    padding: 0 0 4px;
+    border-bottom: none; /* tr で区切るので個別下線は不要 */
+  }
+
+  /* 既存の“左セルだけ青い下線”はSPでは非表示に */
+  .pro-wrap__body__table td:first-child::before {
+    display: none;
+  }
+  /* テーブル全体の余白微調整 */
+  .pro-wrap__body {
+    margin-top: 40px;
+  }
+}
+@media (max-width: 540px) {
+  .top-wrap {
+    padding: 80px 0;
+}
+  .pro-wrap__body__table td {
+    font-size:14px;
+  }
+  .mes-wrap__body {
+    margin: 40px auto;
+    flex-direction: column-reverse;
+  }
+  .mes-wrap__body__right {
+    width: 80%;
+    margin:0 auto 40px;
+}
+  .mes-wrap__body__left {
+    width: 100%;
+}
+.mes-wrap__body__txt {
+  font-size: 14px;
+}
+.mes-wrap__body__txt__name {
+  font-size: 14px;
+}
+.mes-wrap__body__right img {
+  width: 100%;
+  aspect-ratio: 18 / 25;
+  object-fit: cover;
+  box-shadow: 20px 20px 0px rgba(133, 133, 133, 0.6);
+
+}
+}
