@@ -266,6 +266,22 @@ crossorigin="anonymous" referrerpolicy="no-referrer">
                 </div>
             </section>
         </main>
+        <script>
+            (function(){
+                const btn  = document.getElementById('hamburger');
+                const nav  = document.getElementById('global-nav');
+                const ovl  = document.getElementById('navOverlay');
+                function toggle(open){
+                    const willOpen = (open !== undefined) ? open : !document.body.classList.contains('is-nav-open');
+                    document.body.classList.toggle('is-nav-open', willOpen);
+                    btn.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+                    document.body.style.overflow = willOpen ? 'hidden' : ''; // スクロール固定
+                    }
+                    btn.addEventListener('click', () => toggle());
+                    ovl.addEventListener('click', () => toggle(false));
+                    window.addEventListener('keydown', (e) => { if(e.key === 'Escape') toggle(false); });
+                    })();
+            </script>
         <footer class="footer" id="footer">
             <div class="footer-wrap">
                 <div class="footer-wrap__left">
