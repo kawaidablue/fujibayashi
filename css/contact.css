@@ -195,4 +195,12 @@
       min-width: 0;
     }
   }
+  @media (max-width: 540px){
+    .top-wrap {
+      padding: 60px 0;
+  }
+  .contact-wrap__txt {
+      font-size: 14px;
+  }
+  }
   

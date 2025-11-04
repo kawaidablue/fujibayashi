@@ -149,3 +149,19 @@
     width: 30%;
 }
 }
+@media (max-width:540px){
+  .top-wrap {
+    padding: 60px 0;
+}
+.news-item__link {
+  font-size: 14px;
+  flex-direction: column;
+  padding: 20px 5px 10px 5px;
+}
+.news-item__link::after {
+  width: 30px;
+  height: 30px;
+  font-size: 14px;
+  top:55%;
+}
+}

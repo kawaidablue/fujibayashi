@@ -202,7 +202,7 @@
 }
 @media (max-width: 540px) {
   .top-wrap {
-    padding: 80px 0;
+    padding: 60px 0;
 }
   .pro-wrap__body__table td {
     font-size:14px;
@@ -211,6 +211,9 @@
     margin: 40px auto;
     flex-direction: column-reverse;
   }
+  .mes-wrap {
+    margin: 40px auto;
+}
   .mes-wrap__body__right {
     width: 80%;
     margin:0 auto 40px;
@@ -230,5 +233,11 @@
   object-fit: cover;
   box-shadow: 20px 20px 0px rgba(133, 133, 133, 0.6);
 
+}
+.title h3 {
+  font-size: 28px;
+}
+.title p {
+  font-size: 16px;
 }
 }

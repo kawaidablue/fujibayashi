@@ -138,6 +138,10 @@ footer {
     }
 }
 @media (max-width:540px){
+    .footer-wrap__left__logo {
+        width: 200px;
+        margin: 0 auto;
+    }
     .footer-wrap {
         width: 95%;
     }
@@ -162,7 +166,9 @@ footer {
         margin-top: 20px;;
     }
     .footer-wrap__right__nav__right{
-        display: flex;
-        gap:100px;
+        margin-bottom: 0px;
+    }
+    .footer-wrap__right__nav__list {
+        margin-left:20px;
     }
 }
