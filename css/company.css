@@ -101,7 +101,7 @@
   }
   .pro-wrap__body__table{
   width: 100%;
-  border-collapse: separate;      /* ← border-spacing を効かせるため */
+  border-collapse:collapse;      /* ← border-spacing を効かせるため */
   border-spacing: 20px;         /* ← 行と行の“間”を空ける（縦だけ） */
   table-layout: fixed;            /* 長文でもレイアウトが安定 */
 }
@@ -123,7 +123,7 @@
 
 /* 行のカード風（影や角丸は好みで） */
 .pro-wrap__body__table tr{
-  border-bottom:#004FA4 1px solid;
+  border-bottom:#8c8c8c 1px solid;
 }
 
 /* 青字の強調 */
