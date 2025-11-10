@@ -653,11 +653,14 @@ width:55%;
     overflow: hidden;
 }
   .top-wrap__title h1{
-    font-size:32px;
+    font-size:28px;
   }
   .top-wrap__title h1 small{
-    font-size:16px;
+    font-size:14px;
   }
+  .top-wrap__title {
+    bottom: 4%;
+}
   .news-wrap {
     padding: 40px 0 40px 0;
 }
@@ -676,6 +679,15 @@ width:55%;
   .news-wrap__body__btn a {
       padding: 3% 8% 3% 5%;
   }
+  .news-wrap__body__list__item__date {
+    width: 40%;
+    padding-right: 5px;
+}
+.news-wrap__body__list__item__txt {
+  width: 60%;
+  padding: 0 5px;
+  font-weight:400;
+}
 .news-wrap__body__btn a::after {
   top: 50%;
   right: 8px;

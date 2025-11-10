@@ -1,8 +1,11 @@
 @charset "UTF-8";
+:root{
+    --sp-header-h: 61px; /* SPヘッダーの見た目高さに合わせて微調整OK */
+  }
 header {
     background-color: #00244A;
     position: relative; 
-    z-index: 900; 
+    z-index: 1301; 
 }
 .header-wrap {
     display: flex;
@@ -87,6 +90,9 @@ header {
 .header-drawer__cta { 
     display: none ;
 }
+.header-drawer__policy { 
+    display: none ;
+}
 /* ハンバーガー（共通） */
 .hamburger{
     display:none; 
@@ -123,27 +129,37 @@ body.is-nav-open .header-drawer__top { display: block; }
         margin-right: 20px;
 }
 .header-wrap__nav{
-    position:fixed; top:0; right:0;
-    width:min(76vw,420px); height:100vh;
-    background:rgba(0,34,74,0.97);
-    box-shadow:-8px 0 24px rgba(0,0,0,.25);
-    transform:translateX(100%); 
-    opacity:0; 
-    pointer-events:none;
-    transition:transform .28s ease, opacity .28s ease;
-    z-index:1200;                           /* CTAより前に！ */
-    display:flex; 
-    align-items:center; 
-    justify-content:center;
+    position: fixed;
+    right: 0;
+    top: var(--sp-header-h);                        /* ヘッダー下から */
+    width: min(76vw, 420px);
+    height: calc(100dvh - var(--sp-header-h));      /* 画面全体を覆わない */
+    background: rgba(0,34,74,0.97);
+    box-shadow: -8px 0 24px rgba(0,0,0,.25);
+    transform: translateX(100%);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform .28s ease, opacity .28s ease;
+    z-index: 1200;
+    display: flex;
+    align-items: flex-start;   /* 上詰め */
+    justify-content: flex-start;
+    overflow: auto;            /* 中身が長いときはスクロール */
+    padding-block: 16px 32px;  /* 上下の余白 */
 }
-.is-nav-open .header-wrap__nav{ transform:translateX(0); opacity:1; pointer-events:auto; }
+.is-nav-open .header-wrap__nav{
+     transform:translateX(0); opacity:1; pointer-events:auto; }
 
 .nav-overlay{
-    position:fixed; 
-    inset:0; 
-    background:rgba(0,0,0,.35);
-    opacity:0; 
-    pointer-events:none; transition:opacity .28s ease; z-index:1199;
+    position: fixed;
+    left: 0; right: 0;
+    top: var(--sp-header-h);   /* ヘッダーは表示されたまま */
+    bottom: 0;
+    background: rgba(0,0,0,.35);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .28s ease;
+    z-index: 1199;
 }
 .is-nav-open .nav-overlay{ opacity:1; pointer-events:auto; }
 
@@ -154,18 +170,32 @@ body.is-nav-open .header-drawer__top { display: block; }
 
   /* ドロワー内のCTAだけ表示 */
 .header-drawer__cta{ 
-    text-align:center; 
+    text-align:left; 
     display:block; 
+    padding: 3% 50px;
 }
 .header-drawer__cta a{
     display:inline-flex; 
-    align-items:center; 
-    gap:.4em;
+    align-items:flex-start;
     color:#fff; 
     text-decoration:none; 
     letter-spacing:.05em;
-    font-size: 24px;
-    padding: 10% 40px;
+    font-size: 16px;
+    font-weight: 500;
+}
+.header-drawer__policy{ 
+    text-align:left; 
+    display:block; 
+    padding: 15% 50px 0 50px ;
+}
+.header-drawer__policy a{
+    display:inline-flex; 
+    align-items:flex-start;
+    color:#fff; 
+    text-decoration:none; 
+    letter-spacing:.05em;
+    font-size: 16px;
+    font-weight: 500;
 }
 .header-wrap__logo {
     width: 14%;
@@ -174,30 +204,29 @@ body.is-nav-open .header-drawer__top { display: block; }
     padding: 10px 0 10px 2.5%;
 }
 .header-wrap__nav__list {
+    display: flex;
     flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    gap: 4px;
+    padding-top:15%;
 }
 
 .header-wrap__nav__list__item {
-    text-align: center;
-    padding: 5% 80px;
+    text-align: left;
+    padding: 3% 50px;
     font-weight: 500;
-    font-size: 24px;
+    font-size: 16px;
 }
 }
 @media (max-width:540px){
     .header-wrap__nav {
         width: 100vw;
     }
-}
-@media (max-width:420px){
-    .pagination a, .pagination span {
-        min-width: 20px;
-        height: 20px;
-        line-height: 20px;
-        padding: 0 10px;
-        font-size: 14px;
+    .header-wrap__logo img {
+        width: 160px;
     }
-    .pagination {
-        gap: 4px;
-    }
+    :root{
+        --sp-header-h: 56px; /* SPヘッダーの見た目高さに合わせて微調整OK */
+      }
 }
