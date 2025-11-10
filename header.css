@@ -1,0 +1,257 @@
+@charset "UTF-8";
+:root{
+    --sp-header-h: 61px; /* SPヘッダーの見た目高さに合わせて微調整OK */
+  }
+header {
+    background-color: #00244A;
+    position: relative; 
+    z-index: 1301; 
+}
+.header-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header-wrap__logo {
+    width:14%;
+    display: flex;
+    align-items: center;
+    padding-left:2.5%;
+}
+.header-wrap__logo img {
+    width:180px;
+}
+.header-wrap__nav__list {
+    display: flex;
+    text-align: center;
+    justify-content: flex-end;
+    align-items: center;
+}
+.header-wrap__nav {
+    width:75%;
+}
+.header-wrap__nav__list__item {
+    text-align: center;
+    font-size: 1rem;
+    padding: 0 2%;
+    font-weight: 500;
+}
+.header-wrap__nav__list__item a {
+    color: #fff;
+    text-decoration: none;
+    display: inline-block;               
+    transition: transform .4s ease;   
+    will-change: transform;
+}
+.header-wrap__nav__list__item a:hover,
+.header-wrap__nav__list__item a:focus-visible {
+  transform: translateY(-2px);  
+  opacity: 0.8;
+  box-shadow: 0 6px 12px rgba(0,0,0,.12);
+}
+.header-drawer__policy a:hover,
+.header-drawer__policy a:focus-visible {
+  transform: translateY(-2px);  
+  opacity: 0.8;
+  box-shadow: 0 6px 12px rgba(0,0,0,.12);
+}
+.header-drawer__cta a:hover,
+.header-drawer__cta a:focus-visible {
+    transform: translateY(-2px);  
+    opacity: 0.8;
+    box-shadow: 0 6px 12px rgba(0,0,0,.12);
+}
+/* ② キーボード操作でも分かるように */
+.header-wrap__nav__list__item a:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+.header-wrap__nav__list__item__con {
+    width:10%;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    padding:  10px 0;
+}
+.header-wrap__nav__list__item__con a {
+    display: inline-flex;
+    align-items: center;
+    font-weight: 700;
+    font-size: 12px;
+    color: #00244A;
+    text-decoration: none;
+    flex-direction:column;
+    letter-spacing: 0.2px;
+    transition: transform .4s ease;
+}
+.header-wrap__nav__list__item__con a:hover,
+.header-wrap__nav__list__item__con a:focus-visible {
+    transform: translateY(-3px);  
+    ;
+}
+.header-drawer__policy a:hover,
+.header-drawer__policy a:focus-visible {
+    transform: translateY(-3px);  
+    ;
+}
+.header-wrap__nav__list__item__con a:hover,
+.header-wrap__nav__list__item__con a:focus-visible {
+    transform: translateY(-3px);  
+    ;
+}
+.fa-solid {
+    font-size: 36px;
+    font-family: "Font Awesome 6 Free" !important;
+    font-weight: 900 !important;
+}
+.fa-envelope::before {
+    content: "\f0e0" !important;  /* 封筒アイコンのコードポイント */
+}
+  /* まず常に隠す（PC/SP共通の初期状態） */
+.header-drawer__cta { 
+    display: none ;
+}
+.header-drawer__policy { 
+    display: none ;
+}
+/* ハンバーガー（共通） */
+.hamburger{
+    display:none; 
+    width:40px; 
+    height:28px; 
+    position:relative;
+    margin-left:auto; 
+    background:transparent; 
+    border:0; 
+    cursor:pointer; 
+    z-index:1201;
+}
+.hamburger span{
+    position:absolute; 
+    left:0; 
+    right:0; 
+    height:2px; 
+    background:#fff; 
+    border-radius:2px; 
+    transition:transform .25s ease, opacity .2s ease, top .25s ease, bottom .25s ease;
+}
+.hamburger span:nth-child(1){ top:0; }
+.hamburger span:nth-child(2){ top:50%; transform:translateY(-50%); }
+.hamburger span:nth-child(3){ bottom:0; }
+.is-nav-open .hamburger span:nth-child(1){ top:50%; transform:translateY(-50%) rotate(45deg); }
+.is-nav-open .hamburger span:nth-child(2){ opacity:0; }
+.is-nav-open .hamburger span:nth-child(3){ bottom:auto; top:50%; transform:translateY(-50%) rotate(-45deg); }
+.header-drawer__top { display: none; }
+body.is-nav-open .header-drawer__top { display: block; }
+/* ドロワーとオーバーレイは最前面に */
+@media (max-width:767px){
+.hamburger{ 
+    display:inline-block; 
+        margin-right: 20px;
+}
+.header-wrap__nav{
+    position: fixed;
+    right: 0;
+    top: var(--sp-header-h);                        /* ヘッダー下から */
+    width: min(76vw, 420px);
+    height: calc(100dvh - var(--sp-header-h));      /* 画面全体を覆わない */
+    background: rgba(0,34,74,0.97);
+    box-shadow: -8px 0 24px rgba(0,0,0,.25);
+    transform: translateX(100%);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform .28s ease, opacity .28s ease;
+    z-index: 1200;
+    display: flex;
+    align-items: flex-start;   /* 上詰め */
+    justify-content: flex-start;
+    overflow: auto;            /* 中身が長いときはスクロール */
+    padding-block: 16px 32px;  /* 上下の余白 */
+}
+.is-nav-open .header-wrap__nav{
+     transform:translateX(0); opacity:1; pointer-events:auto; }
+
+.nav-overlay{
+    position: fixed;
+    left: 0; right: 0;
+    top: var(--sp-header-h);   /* ヘッダーは表示されたまま */
+    bottom: 0;
+    background: rgba(0,0,0,.35);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .28s ease;
+    z-index: 1199;
+}
+.is-nav-open .nav-overlay{ opacity:1; pointer-events:auto; }
+
+  /* PC用の右端CTAはSPで隠す */
+.header-wrap__nav__list__item__con{ 
+    display:none; 
+}
+
+  /* ドロワー内のCTAだけ表示 */
+.header-drawer__cta{ 
+    text-align:left; 
+    display:block; 
+    padding: 3% 50px;
+}
+.header-drawer__cta a{
+    display:inline-flex; 
+    align-items:flex-start;
+    color:#fff; 
+    text-decoration:none; 
+    letter-spacing:.05em;
+    font-size: 16px;
+    font-weight: 500;
+    transition: transform .4s ease;   
+    will-change: transform;
+}
+.header-drawer__policy{ 
+    text-align:left; 
+    display:block; 
+    padding: 3% 50px 0 50px ;
+}
+.header-drawer__policy a{
+    display:inline-flex; 
+    align-items:flex-start;
+    color:#fff; 
+    text-decoration:none; 
+    letter-spacing:.05em;
+    font-size: 16px;
+    font-weight: 500;
+    transition: transform .4s ease;   
+    will-change: transform;
+}
+.header-wrap__logo {
+    width: 14%;
+    display: flex;
+    align-items: center;
+    padding: 10px 0 10px 2.5%;
+}
+.header-wrap__nav__list {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    gap: 4px;
+    padding-top:15%;
+}
+
+.header-wrap__nav__list__item {
+    text-align: left;
+    padding: 3% 50px;
+    font-weight: 500;
+    font-size: 16px;
+}
+}
+@media (max-width:540px){
+    .header-wrap__nav {
+        width: 100vw;
+    }
+    .header-wrap__logo img {
+        width: 160px;
+    }
+    :root{
+        --sp-header-h: 56px; /* SPヘッダーの見た目高さに合わせて微調整OK */
+      }
+}

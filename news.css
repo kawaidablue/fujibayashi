@@ -1,0 +1,240 @@
+@charset "UTF-8";
+.top-wrap {
+  position: relative;
+  background-image: url(../img/7432d5ae556a59c3c9a397a3cfa35298bb3fdf27.jpg);
+  background-position: center;
+  background-size: cover;
+  padding: 150px 0;
+  isolation: isolate; /* 念のため。擬似要素の重なりを安定させる */
+}
+
+/* オーバーレイ */
+.top-wrap::after {
+  content: "";
+  position: absolute;
+  inset: 0;               /* top:0; right:0; bottom:0; left:0 の省略形 */
+  background: rgba(0,0,0,0.4);   /* または background: #000000B3; */
+  pointer-events: none;   /* クリックをブロックしない */
+  z-index: 0;             /* 背景として最下層に */
+}
+
+/* 文字はオーバーレイより前面に */
+.top-wrap__title {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  text-align: center;
+  width: 100%;
+  top: 40%;
+}
+
+/*newsセクション*/
+.news-wrap {
+  padding:60px 0 60px 0;
+  margin: 0 auto;
+  display:flex;
+  justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;  
+}
+.news-wrap__body {
+  width:100%;
+}
+.news-wrap__body__list {
+  width:100%;
+}
+/* リスト全体のレイアウト */
+.news-wrap__body__list {
+  display: flex;
+  flex-direction: column;
+}
+.news-item__head {
+  display: flex;
+  width:30%;
+}
+.news-wrap__body__list__item__date {
+  width:50%;
+}
+/* 各アイテムのカード化 */
+.news-wrap__body__list__item {
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid #D3D3D3;
+}
+.news-wrap__body__list__item::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 1px;
+  width: 120px;                  /* 青線の長さ（お好みで） */
+  background-color: #004FA4;  
+  z-index: 20;  /* 青の色 */
+}
+
+/* 行全体をクリックターゲットに */
+.news-item__link {
+  display: flex;
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  padding:30px 10px;
+}
+
+/* 右端の“丸ボタン風”装飾（疑似要素） */
+.news-item__link::after {
+  content: ">";                        /* シンプルに矢印。SVGにしたい場合は下に例あり */
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  border: 1px solid #333;
+  display: grid;
+  place-items: center;
+  font-size: 18px;
+  transition: transform .18s ease, background-color .18s ease, color .18s ease, border-color .18s ease;
+}
+
+/* ホバー / フォーカスのフィードバック（アクセシビリティ） */
+.news-item__link:hover,
+.news-item__link:focus-visible {
+  background: #fafafa;
+  outline: none;
+}
+
+.news-item__link:hover::after,
+.news-item__link:focus-visible::after {
+  transform: translateY(-50%) scale(1.06);
+  background: #004FA4;;
+  color: #fff;
+  border-color: #004FA4;
+}
+.news-wrap__body__list__item__kind  {
+  font-size: 14px;
+  color: #004FA4;
+  text-align: center;
+}
+.news-wrap__body__more {
+  text-align: center;
+  margin-top: 40px;
+}
+.news-wrap__body__more a {
+  display: inline-block;
+  padding: 12px 30px;
+  border: 1px solid #D3D3D3;
+  text-decoration: none;
+  color: #004FA4;
+  transition: background-color .18s ease, color .18s ease, border-color .18s ease;
+}
+@media (max-width:800px){
+  .news-item__link {
+    flex-direction: column;
+    padding: 30px 10px 20px 10px;
+  }
+  .news-wrap__body__list__item__txt {
+    margin-top: 10px;
+  }
+  .news-item__head {
+    width: 100%;
+  }
+  .news-wrap__body__list__item__date {
+    width: 30%;
+}
+}
+@media (max-width:540px){
+  .top-wrap {
+    padding: 60px 0;
+}
+.news-item__link {
+  font-size: 14px;
+  flex-direction: column;
+  padding: 20px 5px 10px 5px;
+}
+.news-item__link::after {
+  width: 30px;
+  height: 30px;
+  font-size: 14px;
+  top:55%;
+}
+}
+/* ページネーション */
+.pagination {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+  margin: 40px 0 0;
+  flex-wrap: wrap;
+}
+
+.pagination a,
+.pagination span {
+  display: inline-block;
+  min-width: 40px;
+  height: 40px;
+  padding: 0 12px;
+  line-height: 38px;
+  border: 1px solid #D3D3D3;
+  border-radius: 999px;
+  text-align: center;
+  text-decoration: none;
+  color: #004FA4;
+  font-weight: 500;
+  user-select: none;
+}
+
+.pagination .is-active {
+  background: #004FA4;
+  color: #fff;
+  border-color: #004FA4;
+  pointer-events: none;
+}
+
+.pagination .is-disabled {
+  opacity: .4;
+  pointer-events: none;
+}
+
+@media (max-width:560px){
+  .pagination a, .pagination span{
+    min-width: 30px;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 10px;
+    font-size: 14px;
+  }
+}
+@media (max-width:440px){
+  .pagination a, .pagination span{
+    min-width: 25px;
+    height: 25px;
+    line-height: 25px;
+    padding: 0 10px;
+    font-size: 14px;
+  }
+}
+@media (max-width:420px){
+  .pagination a, .pagination span {
+      min-width: 20px;
+      height: 20px;
+      line-height: 20px;
+      padding: 0 10px;
+      font-size: 14px;
+  }
+  .pagination {
+      gap: 4px;
+  }
+}
+@media (max-width:325px){
+  .pagination a, .pagination span {
+    min-width: 15px;
+    height: 20px;
+    line-height: 20px;
+    padding: 0 5px;
+    font-size: 12px;
+}
+}
