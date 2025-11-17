@@ -50,3 +50,31 @@
   .breadcrumb-wrap__list__item:last-child::after {
     content: "";
   }
+  @media (max-width:540px){
+    .breadcrumb {
+      width: 95%;
+      margin: 1.5% auto ;
+    }
+    .breadcrumb-wrap__list__item a {
+      font-size: 12px;
+  }
+  .breadcrumb-wrap__list__item {
+    font-size: 12px;
+}
+.breadcrumb-wrap__list__item::after {
+  content: ">";
+  padding: 5px 5px;
+  font-size: 12px;
+  color:#004FA4;
+}
+.top-wrap__title {
+  line-height: 1.5;
+}
+.top-wrap__title h2 {
+  font-size: 24px;
+  font-weight: 500;
+}
+.top-wrap__title {
+  font-size: 14px;
+}
+  }

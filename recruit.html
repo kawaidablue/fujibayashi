@@ -32,27 +32,35 @@
                 aria-expanded="false">
                 <span></span><span></span><span></span>
             </button>
-                <nav class="header-wrap__nav">
-                    <ul class="header-wrap__nav__list">
-                        <li class="header-wrap__nav__list__item">
-                            <a href="company.html">会社情報</a>
-                        </li>
-                        <li class="header-wrap__nav__list__item">
-                            <a href="#">事業内容</a>
-                        </li>
-                        <li class="header-wrap__nav__list__item">
-                            <a href="news.html">お知らせ</a>
-                        </li>
-                        <li class="header-wrap__nav__list__item">
-                            <a href="recruit.html">採用情報</a>
-                        </li>
-                        <li class="header-drawer__cta">
-                            <a href="contact.html">
-                                お問合わせ
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
+            <nav class="header-wrap__nav" id="global-nav">
+                <ul class="header-wrap__nav__list">
+                    <li class="header-drawer">
+                        <a href="index.html#top">TOP</a>
+                    </li>
+                    <li class="header-wrap__nav__list__item">
+                        <a href="company.html">会社情報</a>
+                    </li>
+                    <li class="header-wrap__nav__list__item">
+                        <a href="index.html#service">事業内容</a>
+                    </li>
+                    <li class="header-wrap__nav__list__item">
+                        <a href="news.html">お知らせ</a>
+                    </li>
+                    <li class="header-wrap__nav__list__item">
+                        <a href="recruit.html">採用情報</a>
+                    </li>
+                    <li class="header-drawer">
+                        <a href="contact.html">
+                            お問合わせ
+                        </a>
+                    </li>
+                    <li class="header-drawer">
+                        <a href="policy.html">
+                            プライバシーポリシー
+                        </a>
+                    </li>
+                </ul>
+            </nav>
                 <div class="header-wrap__nav__list__item__con">
                     <a href="contact.html">
                         <i class="fa-solid fa-envelope" aria-hidden="true"></i>
@@ -162,7 +170,7 @@
                     <div class="rec-wrap__txt">
                         <p>株式会社　藤林商会 　　担当：藤林</p>
                         <p>TEL：0172-65-2002</p>
-                        <p>MAIL：お問い合わせフォームよりご連絡ください</p>
+                        <p>MAIL：<a href=contact.html>お問い合わせフォーム</a>よりご連絡ください</p>
                     </div>
                 </div>
             </section>
@@ -183,11 +191,11 @@
                     window.addEventListener('keydown', (e) => { if(e.key === 'Escape') toggle(false); });
                     })();
             </script>
-               <footer class="footer" id="footer">
+            <footer class="footer" id="footer">
             <div class="footer-wrap">
                 <div class="footer-wrap__left">
                     <a class="footer-wrap__left__logo">
-                        <img src="img/logo.png">
+                        <img src="img/logo.png" alt="ロゴ">
                     </a>
                     <address class="footer-wrap__left__txt">
                     〒038-1203<br>

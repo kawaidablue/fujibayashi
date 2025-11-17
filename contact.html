@@ -32,8 +32,12 @@ crossorigin="anonymous" referrerpolicy="no-referrer">
                 aria-expanded="false">
                 <span></span><span></span><span></span>
             </button>
-                <nav class="header-wrap__nav">
+            <nav class="header-wrap__nav" id="global-nav">
+                <nav class="header-wrap__nav" id="global-nav">
                     <ul class="header-wrap__nav__list">
+                        <li class="header-drawer">
+                            <a href="index.html#top">TOP</a>
+                          </li>
                         <li class="header-wrap__nav__list__item">
                             <a href="company.html">会社情報</a>
                         </li>
@@ -46,13 +50,19 @@ crossorigin="anonymous" referrerpolicy="no-referrer">
                         <li class="header-wrap__nav__list__item">
                             <a href="recruit.html">採用情報</a>
                         </li>
-                        <li class="header-drawer__cta">
+                        <li class="header-drawer">
                             <a href="contact.html">
                                 お問合わせ
                             </a>
                         </li>
+                        <li class="header-drawer">
+                            <a href="policy.html">
+                                プライバシーポリシー
+                            </a>
+                        </li>
                     </ul>
                 </nav>
+            </nav>
                 <div class="header-wrap__nav__list__item__con">
                     <a href="contact.html">
                         <i class="fa-solid fa-envelope" aria-hidden="true"></i>
@@ -112,8 +122,12 @@ crossorigin="anonymous" referrerpolicy="no-referrer">
                             <p class="form__error-msg"></p>
                         </div>
                         <div class="form__item">
-                            <label class="form__name" for="your-name">ふりがな<span class="required">*</span></label>
-                            <input class="form__input validate[required]" type="text" id="your-name" name="your-name" placeholder="例）山田　太郎">
+                            <label class="form__name" for="your-kana">ふりがな <span class="required">*</span></label>
+                            <input class="form__input validate[required]" 
+                                   type="text" 
+                                   id="your-kana" 
+                                   name="your-kana" 
+                                   placeholder="例）やまだ たろう">
                             <p class="form__error-msg"></p>
                         </div>
                         <div class="form__item">
@@ -136,7 +150,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer">
                             <textarea id="comment" name="comment" class="form__textarea validate[required]" placeholder="お問い合わせ内容をご入力ください"></textarea>
                             <p class="form__error-msg"></p>
                         </div>
-                        <p class="form__policy-check"><input class="form__checkbox" type="checkbox" id="policy" required=""></label><label for="policy"><a href="/policy/" target="_blank">プライバシーポリシー</a>に同意する</p>
+                        <p class="form__policy-check"><input class="form__checkbox" type="checkbox" id="policy" required=""></label><label for="policy"><a href="policy.html" target="_blank">プライバシーポリシー</a>に同意する</p>
                         <div class="form__btn">
                             <input type="hidden" name="csrf_token" value="37ce06f4668abc0a5fce32ade01f8882">
                             <input id="button_default" type="button" href="#" value="送信する">

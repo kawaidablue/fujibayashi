@@ -29,10 +29,11 @@
   width: 100%;
   border-collapse:collapse;      /* ← border-spacing を効かせるため */
   border-spacing: 20px;         /* ← 行と行の“間”を空ける（縦だけ） */
-  table-layout: fixed;            /* 長文でもレイアウトが安定 */
+  table-layout: fixed;          /* 長文でもレイアウトが安定 */
 }
 .rec-wrap__body__table tr {
-  border-bottom: 1px solid #D3D3D3; /*行の区切り線*/
+  border-bottom: 1px solid #D3D3D3;
+  position: relative;   /*行の区切り線*/
 }
 /* 左列=見出し、右列=本文 */
 .rec-wrap__body__table th,
@@ -54,4 +55,88 @@
 .rec-wrap__txt {
   margin: 30px 30px 0 30px;
   line-height: 1.8;
+}
+.rec-wrap__body__table td:first-child::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 1px;
+  width: 220px;
+  background-color: #004FA4;
+  z-index: 20;
+}
+.rec-wrap__body__table tbody tr:last-child > td:first-child::before {
+  content: none !important;
+  /* 念のため */
+  display: none;
+}
+@media (max-width: 768px){
+  .rec-wrap {
+    margin: 80px auto;
+  }
+  .rec-wrap__txt {
+    margin: 20px 20px 0 20px;
+    line-height: 1.8;
+}
+.rec-wrap__body {
+  margin-top: 20px;
+  background-color: #fff;
+  padding:3%;
+}
+.rec-wrap__body__table,
+  .rec-wrap__body__table tbody,
+  .rec-wrap__body__table tr,
+  .rec-wrap__body__table td {
+    display: block;
+    width: 100%;
+  }
+
+  .rec-wrap__body__table tr {
+    padding: 16px 0;
+    border-bottom: 1px solid #D3D3D3; /* 行区切り */
+    position: relative;
+  }
+
+  /* 見出し（左セル）を上段に */
+  .rec-wrap__body__table td:first-child {
+    font-weight: 600;
+    color: #004FA4;
+    padding: 0 0 6px;
+    background: transparent;
+    border-bottom: none;
+    white-space: nowrap;
+  }
+
+  /* 本文（右セル）を下段に */
+  .rec-wrap__body__table td:last-child {
+    padding: 0;
+    border-bottom: none;
+  }
+
+  /* 左セルだけの青い下線はSPでは非表示 */
+  .rec-wrap__body__table td:first-child::before {
+    display: none;
+  }
+
+  /* 末行の下線を消す（念のため） */
+  .rec-wrap__body__table tbody tr:last-child {
+    border-bottom: none;
+  }
+
+}
+@media (max-width: 540px){
+  .top-wrap {
+    padding: 60px 0;
+}
+.rec-wrap__txt {
+  margin: 10px 10px 0 0;
+    font-size: 14px;
+}
+.rec-wrap {
+  margin: 60px auto;
+}
+.rec-wrap__body__table {
+  font-size: 14px;
+}
 }

@@ -1,8 +1,11 @@
 @charset "UTF-8";
+:root{
+    --sp-header-h: 61px; /* SPヘッダーの見た目高さに合わせて微調整OK */
+  }
 header {
     background-color: #00244A;
     position: relative; 
-    z-index: 900; 
+    z-index: 1301; 
 }
 .header-wrap {
     display: flex;
@@ -46,7 +49,12 @@ header {
   opacity: 0.8;
   box-shadow: 0 6px 12px rgba(0,0,0,.12);
 }
-
+.header-drawer a:hover,
+.header-drawer a:focus-visible {
+  transform: translateY(-2px);  
+  opacity: 0.8;
+  box-shadow: 0 6px 12px rgba(0,0,0,.12);
+}
 /* ② キーボード操作でも分かるように */
 .header-wrap__nav__list__item a:focus-visible {
   outline: 2px solid currentColor;
@@ -75,6 +83,16 @@ header {
     transform: translateY(-3px);  
     ;
 }
+.header-drawer__policy a:hover,
+.header-drawer__policy a:focus-visible {
+    transform: translateY(-3px);  
+    ;
+}
+.header-wrap__nav__list__item__con a:hover,
+.header-wrap__nav__list__item__con a:focus-visible {
+    transform: translateY(-3px);  
+    ;
+}
 .fa-solid {
     font-size: 36px;
     font-family: "Font Awesome 6 Free" !important;
@@ -84,7 +102,7 @@ header {
     content: "\f0e0" !important;  /* 封筒アイコンのコードポイント */
 }
   /* まず常に隠す（PC/SP共通の初期状態） */
-.header-drawer__cta { 
+.header-drawer { 
     display: none ;
 }
 /* ハンバーガー（共通） */
@@ -114,7 +132,8 @@ header {
 .is-nav-open .hamburger span:nth-child(1){ top:50%; transform:translateY(-50%) rotate(45deg); }
 .is-nav-open .hamburger span:nth-child(2){ opacity:0; }
 .is-nav-open .hamburger span:nth-child(3){ bottom:auto; top:50%; transform:translateY(-50%) rotate(-45deg); }
-
+.header-drawer { display: none; }
+body.is-nav-open .header-drawer { display: block; }
 /* ドロワーとオーバーレイは最前面に */
 @media (max-width:767px){
 .hamburger{ 
@@ -122,27 +141,37 @@ header {
         margin-right: 20px;
 }
 .header-wrap__nav{
-    position:fixed; top:0; right:0;
-    width:min(76vw,420px); height:100vh;
-    background:rgba(0,34,74,0.97);
-    box-shadow:-8px 0 24px rgba(0,0,0,.25);
-    transform:translateX(100%); 
-    opacity:0; 
-    pointer-events:none;
-    transition:transform .28s ease, opacity .28s ease;
-    z-index:1200;                           /* CTAより前に！ */
-    display:flex; 
-    align-items:center; 
-    justify-content:flex-start;
+    position: fixed;
+    right: 0;
+    top: var(--sp-header-h);                        /* ヘッダー下から */
+    width: min(76vw, 420px);
+    height: calc(100dvh - var(--sp-header-h));      /* 画面全体を覆わない */
+    background: rgba(0,34,74,0.97);
+    box-shadow: -8px 0 24px rgba(0,0,0,.25);
+    transform: translateX(100%);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform .28s ease, opacity .28s ease;
+    z-index: 1200;
+    display: flex;
+    align-items: flex-start;   /* 上詰め */
+    justify-content: flex-start;
+    overflow: auto;            /* 中身が長いときはスクロール */
+    padding-block: 16px 32px;  /* 上下の余白 */
 }
-.is-nav-open .header-wrap__nav{ transform:translateX(0); opacity:1; pointer-events:auto; }
+.is-nav-open .header-wrap__nav{
+     transform:translateX(0); opacity:1; pointer-events:auto; }
 
 .nav-overlay{
-    position:fixed; 
-    inset:0; 
-    background:rgba(0,0,0,.35);
-    opacity:0; 
-    pointer-events:none; transition:opacity .28s ease; z-index:1199;
+    position: fixed;
+    left: 0; right: 0;
+    top: var(--sp-header-h);   /* ヘッダーは表示されたまま */
+    bottom: 0;
+    background: rgba(0,0,0,.35);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .28s ease;
+    z-index: 1199;
 }
 .is-nav-open .nav-overlay{ opacity:1; pointer-events:auto; }
 
@@ -152,34 +181,52 @@ header {
 }
 
   /* ドロワー内のCTAだけ表示 */
-.header-drawer__cta{ 
-    text-align:center; 
+.header-drawer { 
+    text-align:left; 
     display:block; 
+    padding: 3% 50px;
 }
-.header-drawer__cta a{
+.header-drawer a{
     display:inline-flex; 
-    align-items:center; 
-    gap:.4em;
+    align-items:flex-start;
     color:#fff; 
     text-decoration:none; 
     letter-spacing:.05em;
-    font-size: 24px;
-    padding: 10% 40px;
+    font-size: 16px;
+    font-weight: 500;
+    transition: transform .4s ease;   
+    will-change: transform;
 }
 .header-wrap__logo {
     width: 14%;
     display: flex;
     align-items: center;
-    padding: 20px 0 20px 2.5%;
+    padding: 10px 0 10px 2.5%;
 }
 .header-wrap__nav__list {
+    display: flex;
     flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    gap: 4px;
+    padding-top:15%;
 }
 
 .header-wrap__nav__list__item {
-    text-align: center;
-    padding: 5% 80px;
+    text-align: left;
+    padding: 3% 50px;
     font-weight: 500;
-    font-size: 24px;
+    font-size: 16px;
 }
+}
+@media (max-width:540px){
+    .header-wrap__nav {
+        width: 100vw;
+    }
+    .header-wrap__logo img {
+        width: 160px;
+    }
+    :root{
+        --sp-header-h: 56px; /* SPヘッダーの見た目高さに合わせて微調整OK */
+      }
 }

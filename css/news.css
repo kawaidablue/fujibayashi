@@ -28,10 +28,6 @@
   top: 40%;
 }
 
-.top-wrap__title h2 {
-  font-size: 32px;
-  font-weight: 500;
-}
 /*newsセクション*/
 .news-wrap {
   padding:60px 0 60px 0;
@@ -53,7 +49,13 @@
   display: flex;
   flex-direction: column;
 }
-
+.news-item__head {
+  display: flex;
+  width:30%;
+}
+.news-wrap__body__list__item__date {
+  width:50%;
+}
 /* 各アイテムのカード化 */
 .news-wrap__body__list__item {
   position: relative;
@@ -73,10 +75,7 @@
 
 /* 行全体をクリックターゲットに */
 .news-item__link {
-  display: grid;
-  grid-template-columns: 120px 90px 1fr; /* 日付 / 種別 / タイトル */
-align-items: center;
-  gap: 12px;    /* 右に余白→疑似ボタンのぶん */
+  display: flex;
   text-decoration: none;
   color: inherit;
   position: relative;
@@ -119,22 +118,123 @@ align-items: center;
   color: #004FA4;
   text-align: center;
 }
-/* 小さめ端末での崩れ対策 */
-@media (max-width: 600px) {
+.news-wrap__body__more {
+  text-align: center;
+  margin-top: 40px;
+}
+.news-wrap__body__more a {
+  display: inline-block;
+  padding: 12px 30px;
+  border: 1px solid #D3D3D3;
+  text-decoration: none;
+  color: #004FA4;
+  transition: background-color .18s ease, color .18s ease, border-color .18s ease;
+}
+@media (max-width:800px){
   .news-item__link {
-    grid-template-columns: 1fr;        /* 縦積み */
-    gap: 6px;
-    padding-right: 56px;               /* 疑似ボタンのぶんだけ確保 */
+    flex-direction: column;
+    padding: 30px 10px 20px 10px;
+  }
+  .news-wrap__body__list__item__txt {
+    margin-top: 10px;
+  }
+  .news-item__head {
+    width: 100%;
+  }
+  .news-wrap__body__list__item__date {
+    width: 30%;
+}
+}
+@media (max-width:540px){
+  .top-wrap {
+    padding: 60px 0;
+}
+.news-item__link {
+  font-size: 14px;
+  flex-direction: column;
+  padding: 20px 5px 10px 5px;
+}
+.news-item__link::after {
+  width: 30px;
+  height: 30px;
+  font-size: 14px;
+  top:55%;
+}
+}
+/* ページネーション */
+.pagination {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+  margin: 40px 0 0;
+  flex-wrap: wrap;
+}
+
+.pagination a,
+.pagination span {
+  display: inline-block;
+  min-width: 40px;
+  height: 40px;
+  padding: 0 12px;
+  line-height: 38px;
+  border: 1px solid #D3D3D3;
+  border-radius: 999px;
+  text-align: center;
+  text-decoration: none;
+  color: #004FA4;
+  font-weight: 500;
+  user-select: none;
+}
+
+.pagination .is-active {
+  background: #004FA4;
+  color: #fff;
+  border-color: #004FA4;
+  pointer-events: none;
+}
+
+.pagination .is-disabled {
+  opacity: .4;
+  pointer-events: none;
+}
+
+@media (max-width:560px){
+  .pagination a, .pagination span{
+    min-width: 30px;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 10px;
+    font-size: 14px;
   }
 }
-.news-wrap__body__more{
-    text-align: center;
-    margin: 60px auto 40px auto;
+@media (max-width:440px){
+  .pagination a, .pagination span{
+    min-width: 25px;
+    height: 25px;
+    line-height: 25px;
+    padding: 0 10px;
+    font-size: 14px;
+  }
 }
-.news-wrap__body__more a{
-    font-size: 14px;;
-    text-decoration: none;
-    color: #004FA4;
-    border:#D3D3D3 1px solid;
-    padding: 15px 30px;
+@media (max-width:420px){
+  .pagination a, .pagination span {
+      min-width: 20px;
+      height: 20px;
+      line-height: 20px;
+      padding: 0 10px;
+      font-size: 14px;
+  }
+  .pagination {
+      gap: 4px;
+  }
+}
+@media (max-width:325px){
+  .pagination a, .pagination span {
+    min-width: 15px;
+    height: 20px;
+    line-height: 20px;
+    padding: 0 5px;
+    font-size: 12px;
+}
 }
