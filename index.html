@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
-    <head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>藤林商会</title>
@@ -9,406 +9,414 @@
     <link rel="stylesheet" href="css/main.css" />
     <link rel="stylesheet" href="css/header.css" />
     <link rel="stylesheet" href="css/footer.css" />
-    <link rel="stylesheet" href="css/top.css">
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-crossorigin="anonymous" referrerpolicy="no-referrer">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Hina+Mincho&family=Noto+Sans+JP:wght@100..900&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Rajdhani:wght@300;400;500;600;700&family=Shippori+Mincho+B1&display=swap" rel="stylesheet">
-    </head>
-    <body>
-        <header id="header" class="haeder">
-            <div class="header-wrap">
-                <a href="index.html" class="header-wrap__logo">
-                    <img src="img/logo.png" alt="ロゴ画像" />
+    <link rel="stylesheet" href="css/top.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Hina+Mincho&family=Noto+Sans+JP:wght@100..900&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Rajdhani:wght@300;400;500;600;700&family=Shippori+Mincho+B1&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header id="header" class="haeder">
+      <div class="header-wrap">
+        <a href="index.html" class="header-wrap__logo">
+          <img src="img/logo.png" alt="ロゴ画像" />
+        </a>
+        <!-- ハンバーガー -->
+        <button
+          class="hamburger"
+          id="hamburger"
+          aria-label="メニュー"
+          aria-controls="global-nav"
+          aria-expanded="false"
+        >
+          <span></span><span></span><span></span>
+        </button>
+        <nav class="header-wrap__nav" id="global-nav">
+          <ul class="header-wrap__nav__list">
+            <li class="header-drawer">
+              <a href="index.html#top">TOP</a>
+            </li>
+            <li class="header-wrap__nav__list__item">
+              <a href="company.html">会社情報</a>
+            </li>
+            <li class="header-wrap__nav__list__item">
+              <a href="index.html#service">事業内容</a>
+            </li>
+            <li class="header-wrap__nav__list__item">
+              <a href="news.html">お知らせ</a>
+            </li>
+            <li class="header-wrap__nav__list__item">
+              <a href="recruit.html">採用情報</a>
+            </li>
+            <li class="header-drawer">
+              <a href="contact.html"> お問合わせ </a>
+            </li>
+            <li class="header-drawer">
+              <a href="policy.html"> プライバシーポリシー </a>
+            </li>
+          </ul>
+        </nav>
+        <div class="header-wrap__nav__list__item__con">
+          <a href="contact.html">
+            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+            お問合わせ
+          </a>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="top" id="top">
+        <div class="top-wrap">
+          <div class="top-wrap__video">
+            <!-- iOS対策：playsinline、autoplay+muted+loop、posterも推奨 -->
+            <video
+              src="img/video01.mp4"
+              autoplay
+              muted
+              loop
+              playsinline
+              poster="index-video-sam.jpg"
+              alt="動画のサムネイル"
+            >
+              <img src="index-video-sam.jpg" alt="動画のサムネイル" />
+            </video>
+          </div>
+          <div class="top-wrap__title">
+            <h1>
+              津軽平野から全国へ<br />
+              <small>
+                人にも環境にもやさしい<br />
+                正しいアスベスト除去技術を届けます
+              </small>
+            </h1>
+          </div>
+        </div>
+      </section>
+      <section id="news" class="news">
+        <div class="news-wrap __inner">
+          <div class="news-wrap__title">
+            <h3>NEWS</h3>
+            <p>おしらせ</p>
+          </div>
+          <div class="news-wrap__body">
+            <ul class="news-wrap__body__list">
+              <li class="news-wrap__body__list__item">
+                <p class="news-wrap__body__list__item__date">YYYY.MM DD</p>
+                <p class="news-wrap__body__list__item__txt">
+                  ここにタイトルが入ります
+                </p>
+              </li>
+              <li class="news-wrap__body__list__item">
+                <p class="news-wrap__body__list__item__date">YYYY.MM DD</p>
+                <p class="news-wrap__body__list__item__txt">
+                  ここにタイトルが入ります
+                </p>
+              </li>
+            </ul>
+            <div class="news-wrap__body__btn">
+              <a href="news.html" 　>お知らせ一覧</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="about" id="about">
+        <div class="about-wrap __inner">
+          <div class="about-wrap__title top">
+            <h3>ABOUT US</h3>
+            <p>会社情報</p>
+          </div>
+          <div class="about-wrap__body">
+            <div class="about-wrap__body__left">
+              <div class="about-wrap__body__left__txt">
+                <p>
+                  藤林商会は創業58年、煙突や壁面のアスベスト除去を中心に、安全で効率的な汚染物質除去技術を磨いてきました。
+                  特許や受賞歴が示すように、独自技術は高く評価されています。
+                  しかし現場では、誤った理解や施工による二次・三次汚染のリスクが依然として存在します。
+                  将来の安全を守るためには、「正しい」方法を知ること、伝えることが不可欠です。<br />
+                  <br />
+                  環境と作業員の安全を最優先に、コストにも配慮した正しい除去技術を提供し、
+                  科学的裏付けのある知識と経験を全国へ広め、未来の安心を築きます。
+                </p>
+              </div>
+              <div class="about-wrap__body__left__btn">
+                <a href="company.html">会社情報を見る</a>
+              </div>
+            </div>
+            <div class="about-wrap__body__right">
+              <img src="img/top_aboutleft.jpg" alt="about" />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="service" id="service">
+        <div class="service-wrap __inner">
+          <div class="service-wrap__top">
+            <div class="service-wrap__top__title">
+              <h3>OUR SERVICE</h3>
+              <p>事業内容</p>
+            </div>
+            <div class="service-wrap__top__txt">
+              <p>
+                特許技術と豊富な経験をもとに、アスベストを中心とした汚染物質除去サービスを全国に展開し、安全と安心を支えています。
+              </p>
+            </div>
+          </div>
+          <div class="service-wrap__under">
+            <div class="service-wrap__under__grid">
+              <div
+                class="service-wrap__under__grid__item Chimney_Asbestos_Removal"
+              >
+                <div class="service-wrap__under__grid__item__head">
+                  <h5>
+                    <small> Chimney Asbestos Removal<br /> </small>
+                    煙突アスベスト除去
+                  </h5>
+                </div>
+                <div class="service-wrap__under__grid__item__btn">
+                  <a href="https://fujibayashi.co.jp/arc/">詳細を見る</a>
+                </div>
+              </div>
+              <div
+                class="service-wrap__under__grid__item Asbestos_Wall_Coating_Removal"
+              >
+                <div class="service-wrap__under__grid__item__head">
+                  <h5>
+                    <small> Asbestos Wall Coating Removal<br /> </small>
+                    壁面アスベスト含有<br />
+                    仕上塗材除去
+                  </h5>
+                </div>
+                <div class="service-wrap__under__grid__item__btn">
+                  <a href="https://fujibayashi.co.jp/aac/">詳細を見る</a>
+                </div>
+              </div>
+              <div
+                class="service-wrap__under__grid__item Sprayed_Asbestos_Abatement_System"
+              >
+                <div class="service-wrap__under__grid__item__head">
+                  <h5>
+                    <small> Sprayed Asbestos Abatement System<br /> </small>
+                    吹付けアスベスト<br />
+                    除去システム
+                  </h5>
+                </div>
+                <div class="service-wrap__under__grid__item__btn">
+                  <a href="https://fujibayashi.co.jp/product/#Asbestos-removal"
+                    >詳細を見る</a
+                  >
+                </div>
+              </div>
+              <div
+                class="service-wrap__under__grid__item Dioxin_Decontamination"
+              >
+                <div class="service-wrap__under__grid__item__head">
+                  <h5>
+                    <small> Dioxin Decontamination<br /> </small>
+                    ダイオキシン汚染物除去
+                  </h5>
+                </div>
+                <div class="service-wrap__under__grid__item__btn">
+                  <a href="https://fujibayashi.co.jp/product/#Dioxin-removal"
+                    >詳細を見る</a
+                  >
+                </div>
+              </div>
+              <div
+                class="service-wrap__under__grid__item Ultra-High-Pressure_Water_Jetting"
+              >
+                <div class="service-wrap__under__grid__item__head">
+                  <h5>
+                    <small> Ultra-High-Pressure Water Jetting<br /> </small>
+                    超高圧ウォータージェット
+                  </h5>
+                </div>
+                <div class="service-wrap__under__grid__item__btn">
+                  <a href="https://fujibayashi.co.jp/product/#Hi-Jet"
+                    >詳細を見る</a
+                  >
+                </div>
+              </div>
+              <div
+                class="service-wrap__under__grid__item Corrosion_Waterproofing_Solutions"
+              >
+                <div class="service-wrap__under__grid__item__head">
+                  <h5>
+                    <small> Corrosion & Waterproofing Solutions<br /> </small>
+                    上水/下水施設<br />
+                    防食防水システム
+                  </h5>
+                </div>
+                <div class="service-wrap__under__grid__item__btn">
+                  <a href="https://fujibayashi.co.jp/product/#C-W-proof-system"
+                    >詳細を見る</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="contact" class="contact">
+        <div class="contact-wrap __inner">
+          <div class="contact-wrap__top">
+            <div class="contact-wrap__top__title">
+              <h3>CONTACT</h3>
+              <p>お問い合わせ</p>
+            </div>
+            <div class="contact-wrap__top__txt">
+              <p>
+                お見積り・ご相談・講演依頼など、まずはお気軽にご相談ください。
+              </p>
+            </div>
+          </div>
+          <div class="contact-wrap__under">
+            <div class="contact-wrap__under__mail">
+              <p>WEBからのお問い合わせ</p>
+              <div class="contact-wrap__under__mail__btn">
+                <a href="contact.html">
+                  <i class="fa-contact fa-envelope" aria-hidden="true"> </i>
+                  お問い合わせフォーム
                 </a>
-                <!-- ハンバーガー -->
-                <button class="hamburger" id="hamburger"
-                aria-label="メニュー"
-                aria-controls="global-nav"
-                aria-expanded="false">
-                <span></span><span></span><span></span>
-            </button>
-                <nav class="header-wrap__nav" id="global-nav">
-                    <ul class="header-wrap__nav__list">
-                        <li class="header-wrap__nav__list__item header-drawer__top">
-                            <a href="index.html#top">TOP</a>
-                          </li>
-                        <li class="header-wrap__nav__list__item">
-                            <a href="company.html">会社情報</a>
-                        </li>
-                        <li class="header-wrap__nav__list__item">
-                            <a href="index.html#service">事業内容</a>
-                        </li>
-                        <li class="header-wrap__nav__list__item">
-                            <a href="news.html">お知らせ</a>
-                        </li>
-                        <li class="header-wrap__nav__list__item">
-                            <a href="recruit.html">採用情報</a>
-                        </li>
-                        <li class="header-drawer__cta">
-                            <a href="contact.html">
-                                お問合わせ
-                            </a>
-                        </li>
-                        <li class="header-drawer__policy">
-                            <a href="policy.html">
-                                プライバシーポリシー
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-                <div class="header-wrap__nav__list__item__con">
-                    <a href="contact.html">
-                        <i class="fa-solid fa-envelope" aria-hidden="true"></i>
-                        お問合わせ
-                    </a>
-                </div>
+              </div>
             </div>
-        </header>
-        <main>
-            <section class="top" id="top">
-                <div class="top-wrap">
-                    <div class="top-wrap__video">
-                    <!-- iOS対策：playsinline、autoplay+muted+loop、posterも推奨 -->
-                    <video
-                    src="img/video_001.mp4"
-                    autoplay
-                    muted
-                    loop
-                    playsinline
-                    poster="index-video-sam.jpg" alt="動画のサムネイル">
-                    <img src="index-video-sam.jpg" alt="動画のサムネイル">
-                    </video>
-                </div>
-                <div class="top-wrap__title">
-                    <h1>
-                    津軽平野から全国へ<br>
-                    <small>
-                        人にも環境にもやさしい<br>
-                        正しいアスベスト除去技術を届けます
-                    </small>
-                    </h1>
-                </div>
-                </div>
-            </section>
-            <section id="news" class="news">
-                <div class="news-wrap __inner">
-                    <div class="news-wrap__title">
-                        <h3>NEWS</h3>
-                        <p>おしらせ</p>
-                    </div>
-                    <div class="news-wrap__body">
-                        <ul class="news-wrap__body__list">
-                            <li class="news-wrap__body__list__item">
-                                <p class="news-wrap__body__list__item__date">
-                                    YYYY.MM DD
-                                </p>
-                                <p class="news-wrap__body__list__item__txt">
-                                    ここにタイトルが入ります
-                                </p>
-                            </li>
-                            <li class="news-wrap__body__list__item">
-                                <p class="news-wrap__body__list__item__date">
-                                    YYYY.MM DD
-                                </p>
-                                <p class="news-wrap__body__list__item__txt">
-                                    ここにタイトルが入ります
-                                </p>
-                            </li>
-                        </ul>
-                        <div class="news-wrap__body__btn">
-                            <a href="news.html"　>お知らせ一覧</a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section class="about" id="about">
-                <div class="about-wrap __inner">
-                    <div class="about-wrap__title top">
-                        <h3>ABOUT US</h3>
-                        <p>会社情報</p>
-                    </div>
-                    <div class="about-wrap__body">
-                        <div class="about-wrap__body__left">
-                            <div class="about-wrap__body__left__txt">
-                                <p>
-                                    藤林商会は創業58年、煙突や壁面のアスベスト除去を中心に、安全で効率的な汚染物質除去技術を磨いてきました。
-                                    特許や受賞歴が示すように、独自技術は高く評価されています。
-                                    しかし現場では、誤った理解や施工による二次・三次汚染のリスクが依然として存在します。
-                                    将来の安全を守るためには、「正しい」方法を知ること、伝えることが不可欠です。<br>
-                                    <br>
-                                    環境と作業員の安全を最優先に、コストにも配慮した正しい除去技術を提供し、
-                                    科学的裏付けのある知識と経験を全国へ広め、未来の安心を築きます。
-                                </p>
-                            </div>
-                            <div class="about-wrap__body__left__btn">
-                                <a href="company.html">会社情報を見る</a>
-                            </div>
-                        </div>
-                        <div class="about-wrap__body__right">
-                            <img src="img/top_aboutleft.jpg" alt="about">
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section class="service" id="service">
-                <div class="service-wrap __inner">
-                    <div class="service-wrap__top">
-                        <div class="service-wrap__top__title">
-                            <h3>OUR SERVICE</h3>
-                            <p>事業内容</p>
-                        </div>
-                        <div class="service-wrap__top__txt">
-                            <p>
-                                特許技術と豊富な経験をもとに、アスベストを中心とした汚染物質除去サービスを全国に展開し、安全と安心を支えています。
-                            </p>
-                        </div>
-                    </div>
-                    <div class="service-wrap__under">
-                        <div class="service-wrap__under__grid">
-                            <div class="service-wrap__under__grid__item Chimney_Asbestos_Removal">
-                                <div class="service-wrap__under__grid__item__head">
-                                    <h5>
-                                        <small>
-                                        Chimney Asbestos Removal<br>
-                                        </small>
-                                        煙突アスベスト除去
-                                    </h5>
-                                </div>
-                                <div class="service-wrap__under__grid__item__btn">
-                                    <a href="https://fujibayashi.co.jp/arc/">詳細を見る</a>
-                                </div>
-                            </div>
-                            <div class="service-wrap__under__grid__item Asbestos_Wall_Coating_Removal">
-                                <div class="service-wrap__under__grid__item__head">
-                                    <h5>
-                                        <small>
-                                        Asbestos Wall Coating Removal<br>
-                                        </small>
-                                        壁面アスベスト含有<br>
-                                        仕上塗材除去
-                                    </h5>
-                                </div>
-                                <div class="service-wrap__under__grid__item__btn">
-                                    <a href="https://fujibayashi.co.jp/aac/">詳細を見る</a>
-                                </div>
-                            </div>
-                            <div class="service-wrap__under__grid__item Sprayed_Asbestos_Abatement_System">
-                                <div class="service-wrap__under__grid__item__head">
-                                    <h5>
-                                        <small>
-                                        Sprayed Asbestos Abatement System<br>
-                                        </small>                                    
-                                        吹付けアスベスト<br>
-                                        除去システム
-                                    </h5>
-                                </div>
-                                <div class="service-wrap__under__grid__item__btn">
-                                    <a href="https://fujibayashi.co.jp/product/#Asbestos-removal">詳細を見る</a>
-                                </div>
-                            </div>
-                            <div class="service-wrap__under__grid__item Dioxin_Decontamination">
-                                <div class="service-wrap__under__grid__item__head">
-                                    <h5>
-                                        <small>
-                                            Dioxin Decontamination<br>
-                                        </small>
-                                        ダイオキシン汚染物除去
-                                    </h5>
-                                </div>
-                                <div class="service-wrap__under__grid__item__btn">
-                                    <a href="https://fujibayashi.co.jp/product/#Dioxin-removal">詳細を見る</a>
-                                </div>
-                            </div>
-                            <div class="service-wrap__under__grid__item Ultra-High-Pressure_Water_Jetting">
-                                <div class="service-wrap__under__grid__item__head">
-                                    <h5>
-                                        <small>
-                                        Ultra-High-Pressure Water Jetting<br>
-                                        </small>
-                                        超高圧ウォータージェット
-                                    </h5>
-                                </div>
-                                <div class="service-wrap__under__grid__item__btn">
-                                    <a href="https://fujibayashi.co.jp/product/#Hi-Jet">詳細を見る</a>
-                                </div>
-                            </div>
-                            <div class="service-wrap__under__grid__item Corrosion_Waterproofing_Solutions">
-                                <div class="service-wrap__under__grid__item__head">
-                                    <h5>
-                                        <small>
-                                        Corrosion & Waterproofing Solutions<br>
-                                        </small>
-                                        上水/下水施設<br>
-                                        防食防水システム
-                                    </h5>
-                                </div>
-                                <div class="service-wrap__under__grid__item__btn">
-                                    <a href="https://fujibayashi.co.jp/product/#C-W-proof-system">詳細を見る</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section id="contact" class="contact">
-                <div class="contact-wrap __inner">
-                    <div class="contact-wrap__top">
-                        <div class="contact-wrap__top__title">
-                            <h3>CONTACT</h3>
-                            <p>お問い合わせ</p>
-                        </div>
-                        <div class="contact-wrap__top__txt">
-                            <p>
-                                お見積り・ご相談・講演依頼など、まずはお気軽にご相談ください。
-                            </p>
-                        </div>
-                    </div>
-                    <div class="contact-wrap__under">
-                        <div class="contact-wrap__under__mail">
-                            <p>
-                                WEBからのお問い合わせ
-                            </p>
-                            <div class="contact-wrap__under__mail__btn">
-                                <a href="contact.html">
-                                    <i class="fa-contact fa-envelope" aria-hidden="true">
-                                    </i>
-                                    お問い合わせフォーム
-                                </a>
-                            </div>
-                        </div>
-                        <div class="contact-wrap__under__tel">
-                            <p class="contact-wrap__under__tel__txt">
-                                お電話でのお問い合わせ
-                            </p>
-                            <a href="tel:0172-65-2002">0172-65-2002</a>
-                            <p class="contact-wrap__under__tel__time">(営業時間8:00-17:00)</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section class="banar" id="banar">
-                <div class="banar-wrap">
-                    <div class="banar-wrap__body">
-                        <a  href="https://the-film.jp/fujibayashi_hideki/?fqn=TXFJZVZCRVFHYzZNWXlnV2FNYWw0dz09"class="banar-wrap__body__film">
-                            <img src="img/film.png" alt="film">
-                        </a>
-                        <a  href="https://innovation-leaders.jp/fujibayashi_hideki/"class="banar-wrap__body__aomori">
-                            <img src="img/aomori.png" alt="film">
-                        </a>
-                        <a  href="https://www.youtube.com/channel/UC917-MWydao70_66uT1qtKw"class="banar-wrap__body__youtube">
-                            <img src="img/youtube.png" alt="film">
-                        </a>
-                    </div>
-                </div>
-            </section>
-        </main>
-        <script>
-        (function(){
-            const btn  = document.getElementById('hamburger');
-            const nav  = document.getElementById('global-nav');
-            const ovl  = document.getElementById('navOverlay');
-            function toggle(open){
-                const willOpen = (open !== undefined) ? open : !document.body.classList.contains('is-nav-open');
-                document.body.classList.toggle('is-nav-open', willOpen);
-                btn.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
-                document.body.style.overflow = willOpen ? 'hidden' : ''; // スクロール固定
-                }
-                btn.addEventListener('click', () => toggle());
-                ovl.addEventListener('click', () => toggle(false));
-                window.addEventListener('keydown', (e) => { if(e.key === 'Escape') toggle(false); });
-                })();
-        </script>
-        <footer class="footer" id="footer">
-            <div class="footer-wrap">
-                <div class="footer-wrap__left">
-                    <a href="index.html" class="footer-wrap__left__logo">
-                        <img src="img/logo.png" alt="ロゴ画像" />
-                    </a>
-                    <address class="footer-wrap__left__txt">
-                    〒038-1203<br>
-                    青森県南津軽郡藤崎町大字久井名舘字早稲田295-2&emsp;<a href="https://maps.app.goo.gl/xrGrPLzpkjNw4X1YA" target="”_blank”">地図</a><br>
-                    電話：<a href="tel:0172-65-2002">0172-65-2002</a>&emsp;FAX：<a href="tel:0172-65-2648">0172-65-2648</a>
-                    </address>
-                </div>
-                <div class="footer-wrap__right">
-                    <nav class="footer-wrap__right__nav">
-                        <div class="footer-wrap__right__nav__left">
-                            <div class="footer-wrap__right__nav__head">
-                                <a href="company.html">
-                                会社情報
-                                </a>
-                            </div>
-                            <div class="footer-wrap__right__nav__head">
-                                <a href="news.html">
-                                お知らせ
-                                </a>
-                            </div>
-                            <div class="footer-wrap__right__nav__head">
-                                <a href="recruit.html">
-                                採用情報
-                                </a>
-                            </div>
-                            <div class="footer-wrap__right__nav__head">
-                                <a href="company.html">
-                                お問い合わせ
-                                </a>
-                            </div>
-                            <div class="footer-wrap__right__nav__head">
-                                <a href="policy.html">
-                                プライバシーポリシー
-                                </a>
-                            </div>
-                        </div>
-                        <div class="footer-wrap__right__nav__right">
-                            <div class="footer-wrap__right__nav__head">
-                                <a href="index.html#service">
-                                事業内容
-                                </a>
-                            </div>
-                            <ul class="footer-wrap__right__nav__list">
-                                <li class="footer-wrap__right__nav__list__item">
-                                    <a href="#">
-                                    煙突アスベスト除去
-                                    </a>
-                                </li>
-                                <li class="footer-wrap__right__nav__list__item">
-                                    <a href="#">
-                                    壁面アスベスト含有仕上塗材除去
-                                    </a>
-                                </li>
-                                <li class="footer-wrap__right__nav__list__item">
-                                    <a href="#">
-                                    吹付けアスベスト除去システム
-                                    </a>
-                                </li>
-                                <li class="footer-wrap__right__nav__list__item">
-                                    <a href="#">
-                                    ダイオキシン汚染物除去
-                                    </a>
-                                </li>
-                                <li class="footer-wrap__right__nav__list__item">
-                                    <a href="#">
-                                        超高圧ウォータージェット
-                                    </a>
-                                </li>
-                                <li class="footer-wrap__right__nav__list__item">
-                                    <a href="#">
-                                        上水下水施設防食防水システム
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </nav>
-                </div>
+            <div class="contact-wrap__under__tel">
+              <p class="contact-wrap__under__tel__txt">
+                お電話でのお問い合わせ
+              </p>
+              <a href="tel:0172-65-2002">0172-65-2002</a>
+              <p class="contact-wrap__under__tel__time">(営業時間8:00-17:00)</p>
             </div>
-            <div class="footer-copylight">
-                <p> © Fujibayashi Co.,Ltd.</p>
+          </div>
+        </div>
+      </section>
+      <section class="banar" id="banar">
+        <div class="banar-wrap">
+          <div class="banar-wrap__body">
+            <a
+              href="https://the-film.jp/fujibayashi_hideki/?fqn=TXFJZVZCRVFHYzZNWXlnV2FNYWw0dz09"
+              class="banar-wrap__body__film"
+            >
+              <img src="img/film.png" alt="film" />
+            </a>
+            <a
+              href="https://innovation-leaders.jp/fujibayashi_hideki/"
+              class="banar-wrap__body__aomori"
+            >
+              <img src="img/aomori.png" alt="film" />
+            </a>
+            <a
+              href="https://www.youtube.com/channel/UC917-MWydao70_66uT1qtKw"
+              class="banar-wrap__body__youtube"
+            >
+              <img src="img/youtube.png" alt="film" />
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script>
+      (function () {
+        const btn = document.getElementById("hamburger");
+        const nav = document.getElementById("global-nav");
+        const ovl = document.getElementById("navOverlay");
+        function toggle(open) {
+          const willOpen =
+            open !== undefined
+              ? open
+              : !document.body.classList.contains("is-nav-open");
+          document.body.classList.toggle("is-nav-open", willOpen);
+          btn.setAttribute("aria-expanded", willOpen ? "true" : "false");
+          document.body.style.overflow = willOpen ? "hidden" : ""; // スクロール固定
+        }
+        btn.addEventListener("click", () => toggle());
+        ovl.addEventListener("click", () => toggle(false));
+        window.addEventListener("keydown", (e) => {
+          if (e.key === "Escape") toggle(false);
+        });
+      })();
+    </script>
+    <footer class="footer" id="footer">
+      <div class="footer-wrap">
+        <div class="footer-wrap__left">
+          <a href="index.html" class="footer-wrap__left__logo">
+            <img src="img/logo.png" alt="ロゴ画像" />
+          </a>
+          <address class="footer-wrap__left__txt">
+            〒038-1203<br />
+            青森県南津軽郡藤崎町大字久井名舘字早稲田295-2&emsp;<a
+              href="https://maps.app.goo.gl/xrGrPLzpkjNw4X1YA"
+              target="”_blank”"
+              >地図</a
+            ><br />
+            電話：<a href="tel:0172-65-2002">0172-65-2002</a>&emsp;FAX：<a
+              href="tel:0172-65-2648"
+              >0172-65-2648</a
+            >
+          </address>
+        </div>
+        <div class="footer-wrap__right">
+          <nav class="footer-wrap__right__nav">
+            <div class="footer-wrap__right__nav__left">
+              <div class="footer-wrap__right__nav__head">
+                <a href="company.html"> 会社情報 </a>
+              </div>
+              <div class="footer-wrap__right__nav__head">
+                <a href="news.html"> お知らせ </a>
+              </div>
+              <div class="footer-wrap__right__nav__head">
+                <a href="recruit.html"> 採用情報 </a>
+              </div>
+              <div class="footer-wrap__right__nav__head">
+                <a href="company.html"> お問い合わせ </a>
+              </div>
+              <div class="footer-wrap__right__nav__head">
+                <a href="policy.html"> プライバシーポリシー </a>
+              </div>
             </div>
-        </footer>
-        <script src="js/top.js"></script>
-    </body>
+            <div class="footer-wrap__right__nav__right">
+              <div class="footer-wrap__right__nav__head">
+                <a href="index.html#service"> 事業内容 </a>
+              </div>
+              <ul class="footer-wrap__right__nav__list">
+                <li class="footer-wrap__right__nav__list__item">
+                  <a href="#"> 煙突アスベスト除去 </a>
+                </li>
+                <li class="footer-wrap__right__nav__list__item">
+                  <a href="#"> 壁面アスベスト含有仕上塗材除去 </a>
+                </li>
+                <li class="footer-wrap__right__nav__list__item">
+                  <a href="#"> 吹付けアスベスト除去システム </a>
+                </li>
+                <li class="footer-wrap__right__nav__list__item">
+                  <a href="#"> ダイオキシン汚染物除去 </a>
+                </li>
+                <li class="footer-wrap__right__nav__list__item">
+                  <a href="#"> 超高圧ウォータージェット </a>
+                </li>
+                <li class="footer-wrap__right__nav__list__item">
+                  <a href="#"> 上水下水施設防食防水システム </a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+      <div class="footer-copylight">
+        <p>© Fujibayashi Co.,Ltd.</p>
+      </div>
+    </footer>
+    <script src="js/top.js"></script>
+  </body>
 </html>
