@@ -1,7 +1,7 @@
 @charset "UTF-8";
 .top-wrap {
     position: relative;
-    background-image: url(../img/7432d5ae556a59c3c9a397a3cfa35298bb3fdf27.jpg);
+    background-image: url(../img/contact.svg);
     background-position: top;
     background-size: cover;
     padding: 150px 0;
@@ -73,7 +73,8 @@
     box-sizing: border-box;
     background: #fff;
     -webkit-appearance: none;
-    appearance: none;
+    -moz-appearance: none;
+         appearance: none;
     outline: none;
     transition: border-color .15s ease, box-shadow .15s ease;
     background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23004FA4' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'/></svg>");
@@ -104,6 +105,18 @@
   }
   
   /* プレースホルダ色 */
+  .form__input::-webkit-input-placeholder, .form__textarea::-webkit-input-placeholder{
+    color: #999;
+  }
+  .form__input::-moz-placeholder, .form__textarea::-moz-placeholder{
+    color: #999;
+  }
+  .form__input:-ms-input-placeholder, .form__textarea:-ms-input-placeholder{
+    color: #999;
+  }
+  .form__input::-ms-input-placeholder, .form__textarea::-ms-input-placeholder{
+    color: #999;
+  }
   .form__input::placeholder,
   .form__textarea::placeholder{
     color: #999;
