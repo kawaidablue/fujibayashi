@@ -80,7 +80,6 @@
       <section class="top" id="top">
         <div class="top-wrap">
           <div class="top-wrap__video">
-            <!-- iOS対策：playsinline、autoplay+muted+loop、posterも推奨 -->
             <video
               src="img/video01.mp4"
               autoplay
@@ -92,15 +91,20 @@
             >
               <img src="index-video-sam.jpg" alt="動画のサムネイル" />
             </video>
-          </div>
-          <div class="top-wrap__title">
-            <h1>
-              津軽平野から全国へ<br />
-              <small>
-                人にも環境にもやさしい<br />
-                正しいアスベスト除去技術を届けます
-              </small>
-            </h1>
+            <!-- 🔊 音あり／なしボタン（JSが見に行ってるクラス名に合わせる） -->
+            <button
+              class="sound sound-mute"
+              type="button"
+              aria-label="音声切り替え"
+            >
+              <span
+                class="sound-icon fa-solid fa-volume-off"
+                aria-hidden="true"
+              ></span>
+            </button>
+            <a href="https://hi-jet.jp/" class="top-wrap__video__logo">
+              <img src="img/header-logo.png" alt="トップロゴ画像" />
+            </a>
           </div>
         </div>
       </section>
@@ -417,6 +421,7 @@
         <p>© Fujibayashi Co.,Ltd.</p>
       </div>
     </footer>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="js/top.js"></script>
   </body>
 </html>
