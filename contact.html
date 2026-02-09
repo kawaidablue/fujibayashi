@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>藤林商会</title>
+    <link rel="icon" href="favicon.ico" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/sub.css" />
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="css/contact.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+crossorigin="anonymous" referrerpolicy="no-referrer">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Hina+Mincho&family=Noto+Sans+JP:wght@100..900&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Rajdhani:wght@300;400;500;600;700&family=Shippori+Mincho+B1&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header id="header" class="haeder">
+            <div class="header-wrap">
+                <a href="index.html" class="header-wrap__logo">
+                    <img src="img/logo.png" alt="ロゴ画像" />
+                </a>
+                <!-- ハンバーガー -->
+                <button class="hamburger" id="hamburger"
+                aria-label="メニュー"
+                aria-controls="global-nav"
+                aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="header-wrap__nav" id="global-nav">
+                <ul class="header-wrap__nav__list">
+                    <li class="header-drawer">
+                        <a href="index.html#top">TOP</a>
+                    </li>
+                    <li class="header-wrap__nav__list__item">
+                        <a href="company.html">会社情報</a>
+                    </li>
+                    <li class="header-wrap__nav__list__item">
+                        <a href="index.html#service">事業内容</a>
+                    </li>
+                    <li class="header-wrap__nav__list__item">
+                        <a href="news.html">お知らせ</a>
+                    </li>
+                    <li class="header-wrap__nav__list__item">
+                        <a href="recruit.html">採用情報</a>
+                    </li>
+                    <li class="header-drawer">
+                        <a href="contact.html">
+                            お問合わせ
+                        </a>
+                    </li>
+                    <li class="header-drawer">
+                        <a href="policy.html">
+                            プライバシーポリシー
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+                <div class="header-wrap__nav__list__item__con">
+                    <a href="contact.html">
+                        <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                        お問合わせ
+                    </a>
+                </div>
+            </div>
+        </header>
+        <section class="top" id="top">
+            <div class="top-wrap">
+                <div class="top-wrap__title">
+                    <h2>お問合わせ</h2>
+                    <p>CONTACT</p>
+                </div>
+            </div>
+        </section>
+        <section class="breadcrumb" id="breadcrumb">
+            <div class="breadcrumb-wrap">
+                <ul class="breadcrumb-wrap__list">
+                    <li class="breadcrumb-wrap__list__item">
+                        <a href="index.html">TOP</a>
+                    </li>
+                    <li class="breadcrumb-wrap__list__item">
+                        お問い合わせ
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="contact" id="contact">
+            <div class="contact-wrap __inner">
+                <div class="contact-wrap__txt">
+                    <p>藤林商会へのお問い合わせは、下記フォームよりお願いいたします。
+                    内容を確認の上、担当者より折り返しご連絡いたします。<br>
+                    お急ぎの方はお電話にてお問い合わせください。</p>
+                </div>
+                <div class="contact-wrap__body">
+                    <form class="form" id="form" action="/confirm/index.php" method="POST">
+                        <div class="form__item">
+                            <label class="form__name" for="about">お問い合わせ内容<span class="required">*</span></label>
+                            <div class="form__select">
+                                <select id="about" name="about" class="validate[required]">
+                                <option value=""></option>
+                                <option value="煙突アスベスト除去（Hi-Jet ARC工法）">煙突アスベスト除去（Hi-Jet ARC工法）</option>
+                                <option value="壁面アスベスト含有仕上塗材除去（Hi-Jet AAC工法）">壁面アスベスト含有仕上塗材除去（Hi-Jet AAC工法）</option>
+                                <option value="吹付けアスベスト除去システム">ダイオキシン汚染物除去</option>
+                                <option value="超高圧ウォータージェット">超高圧ウォータージェット</option>
+                                <option value="上水・下水施設の防食・防水システム">上水・下水施設の防食・防水システム</option>
+                                <option value="講演依頼">講演依頼</option>
+                                <option value="その他、お問い合わせ・ご相談">その他、お問い合わせ・ご相談</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form__item">
+                            <label class="form__name" for="your-name">お名前
+                                <span class="required">*</span></label>
+                            <input class="form__input validate[required]" type="text" id="your-name" name="your-name" placeholder="例）山田　太郎">
+                            <p class="form__error-msg"></p>
+                        </div>
+                        <div class="form__item">
+                            <label class="form__name" for="your-kana">ふりがな <span class="required">*</span></label>
+                            <input class="form__input validate[required]" 
+                                   type="text" 
+                                   id="your-kana" 
+                                   name="your-kana" 
+                                   placeholder="例）やまだ たろう">
+                            <p class="form__error-msg"></p>
+                        </div>
+                        <div class="form__item">
+                            <label class="form__name" for="your-company">会社名・所属名<span class="required">*</span></label>
+                            <input class="form__input validate[required]" type="text" id="your-company" name="your-company" placeholder="例）山田株式会社">
+                            <p class="form__error-msg"></p>
+                        </div>
+                        <div class="form__item">
+                            <label class="form__name" for="email">メールアドレス<span class="required">*</span></label>
+                            <input class="form__input validate[required,custom[email]]" type="email" id="email" name="email" placeholder="例）yamada@smbr.jp">
+                            <p class="form__error-msg"></p>
+                        </div>
+                        <div class="form__item">
+                            <label class="form__name" for="tel">電話番号<span class="required">*</span></label>
+                            <input class="form__input validate[required]" type="tel" id="tel" name="tel" placeholder="例）0312345678">
+                            <p class="form__error-msg"></p>
+                        </div>
+                        <div class="form__item">
+                            <label class="form__name" for="comment">お問い合わせ詳細<span class="required">*</span></label>
+                            <textarea id="comment" name="comment" class="form__textarea validate[required]" placeholder="お問い合わせ内容をご入力ください"></textarea>
+                            <p class="form__error-msg"></p>
+                        </div>
+                        <p class="form__policy-check"><input class="form__checkbox" type="checkbox" id="policy" required=""></label><label for="policy"><a href="policy.html" target="_blank">プライバシーポリシー</a>に同意する</p>
+                        <div class="form__btn">
+                            <input type="hidden" name="csrf_token" value="37ce06f4668abc0a5fce32ade01f8882">
+                            <input id="button_default" type="button" href="#" value="送信する">
+                        </div>
+                        <input type="hidden" name="recaptcha_token" id="recaptchaToken">
+                    </form>
+                </div>
+            </div>
+        </section>
+        <script>
+            (function(){
+                const btn  = document.getElementById('hamburger');
+                const nav  = document.getElementById('global-nav');
+                const ovl  = document.getElementById('navOverlay');
+                function toggle(open){
+                    const willOpen = (open !== undefined) ? open : !document.body.classList.contains('is-nav-open');
+                    document.body.classList.toggle('is-nav-open', willOpen);
+                    btn.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+                    document.body.style.overflow = willOpen ? 'hidden' : ''; // スクロール固定
+                    }
+                    btn.addEventListener('click', () => toggle());
+                    ovl.addEventListener('click', () => toggle(false));
+                    window.addEventListener('keydown', (e) => { if(e.key === 'Escape') toggle(false); });
+                    })();
+            </script>
+        <footer class="footer" id="footer">
+            <div class="footer-wrap">
+                <div class="footer-wrap__left">
+                    <a class="footer-wrap__left__logo">
+                        <img src="img/logo.png" alt="ロゴ画像" />
+                    </a>
+                    <address class="footer-wrap__left__txt">
+                    〒038-1203<br>
+                    青森県南津軽郡藤崎町大字久井名舘字早稲田295-2&emsp;<a href="https://maps.app.goo.gl/xrGrPLzpkjNw4X1YA" target="”_blank”">地図</a><br>
+                    電話：<a href="tel:0172-65-2002">0172-65-2002</a>&emsp;FAX：<a href="tel:0172-65-2648">0172-65-2648</a>
+                    </address>
+                </div>
+                <div class="footer-wrap__right">
+                    <nav class="footer-wrap__right__nav">
+                        <div class="footer-wrap__right__nav__left">
+                            <div class="footer-wrap__right__nav__head">
+                                <a href="company.html">
+                                会社情報
+                                </a>
+                            </div>
+                            <div class="footer-wrap__right__nav__head">
+                                <a href="news.html">
+                                お知らせ
+                                </a>
+                            </div>
+                            <div class="footer-wrap__right__nav__head">
+                                <a href="recruit.html">
+                                採用情報
+                                </a>
+                            </div>
+                            <div class="footer-wrap__right__nav__head">
+                                <a href="company.html">
+                                お問い合わせ
+                                </a>
+                            </div>
+                            <div class="footer-wrap__right__nav__head">
+                                <a href="policy.html">
+                                プライバシーポリシー
+                                </a>
+                            </div>
+                        </div>
+                        <div class="footer-wrap__right__nav__right">
+                            <div class="footer-wrap__right__nav__head">
+                                <a href="index.html#service"> 事業内容 </a>
+                            </div>
+                            <ul class="footer-wrap__right__nav__list">
+                                <li class="footer-wrap__right__nav__list__item">
+                                    <a href="arc.html"> 煙突アスベスト除去 </a>
+                                </li>
+                                <li class="footer-wrap__right__nav__list__item">
+                                    <a href="aac.html"> 壁面アスベスト含有仕上塗材除去 </a>
+                                </li>
+                                <li class="footer-wrap__right__nav__list__item">
+                                    <a href="removal.html#sprayed"> 吹付けアスベスト除去システム </a>
+                                </li>
+                                <li class="footer-wrap__right__nav__list__item">
+                                    <a href="removal.html#dioxin"> ダイオキシン汚染物除去 </a>
+                                </li>
+                                <li class="footer-wrap__right__nav__list__item">
+                                    <a href="removal.html#jet"> 超高圧ウォータージェット </a>
+                                </li>
+                                <li class="footer-wrap__right__nav__list__item">
+                                    <a href="removal.html#Corrosion"> 上水下水施設防食防水システム </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+            <div class="footer-copylight">
+                <p> © Fujibayashi Co.,Ltd.</p>
+            </div>
+        </footer>
+    </body>
+</html>

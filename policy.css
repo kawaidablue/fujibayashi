@@ -1,0 +1,60 @@
+@charset "UTF-8";
+.top-wrap {
+    position: relative;
+    background-image: url(../img/7432d5ae556a59c3c9a397a3cfa35298bb3fdf27.jpg);
+    background-position: center;
+    background-size: cover;
+    padding: 150px 0;
+    isolation: isolate; /* 念のため。擬似要素の重なりを安定させる */
+  }
+  .policy-wrap {
+    max-width:800px;
+    margin: 40px auto;
+    background-color: #ffffff;
+    padding:40px 25px;
+    color:#333333;
+  }
+  .policy-wrap__head {
+    font-weight: 500;
+    margin-top:30px;
+    font-size: 20px;
+  }
+  .policy-wrap__txtonly {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 2;
+  }
+  .policy-wrap__txt {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 2;
+    border-bottom:#dfdfdf solid   1px;
+    padding-bottom:10px;
+  }
+  @media (max-width:900px){
+    
+    .policy-wrap {
+        max-width:none;
+        width:80%;
+      }
+  }
+  @media (max-width:540px){
+    .policy-wrap__head {
+        font-weight: 500;
+        margin-top:30px;
+        font-size: 16px;
+      }
+    .top-wrap {
+        padding: 60px 0;
+    }
+    .policy-wrap__txtonly {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 1.8;
+    }
+    .policy-wrap__txt {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 1.8;
+      }
+    }
