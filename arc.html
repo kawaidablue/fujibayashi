@@ -211,13 +211,17 @@
       <section class="image" id="image">
         <div class="image-wrap __inner">
           <div class="title">
-            <h3>作業イメージをイラストで見る</h3>
+            <h3>作業イメージをイラストと動画で見る</h3>
             <p>Work image</p>
           </div>
           <div class="image-wrap__body">
-            <p>作業イメージをイラストで見る</p>
-            <div class="image-wrap__body__youtube">
-              <iframe src="https://www.youtube.com/embed/dB00hEoKvMk?si=AlEcTizWauzprztF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <div class="image-wrap__body__video">
+              <figure class="video-box">
+                <video src="video/ARC.mp4" controls autoplay muted playsinline loop></video>
+                <figcaption class="video-caption">
+                  吹付けアスベスト除去作業の様子
+                </figcaption>
+              </figure>
             </div>
             <div class="image-wrap__body__img">
               <img  class="gray" src="img/ARC_01_003.jpg" alt="作業イメージ" />
@@ -231,15 +235,20 @@
             <p>flow</p>
           </div>
           <div class="flow-wrap__body">
-            <div class="flow-wrap__body__item">
+            <div class="flow-wrap__body__item" data-step="1">
               <div class="flow-wrap__body__item__head">
                 <h4>除去前</h4>
+              </div>
+              <div class="flow-wrap__body__item__txt">
+                <p>
+                  アスベスト処理除去前の写真は下記
+                </p>
               </div>
               <div class="flow-wrap__body__item__img">
               <img class="gray"  src="img/ARC_03_001.jpg" alt="除去前" />
               </div>
             </div>
-            <div class="flow-wrap__body__item">
+            <div class="flow-wrap__body__item" data-step="2">
               <div class="flow-wrap__body__item__head">
                 <h4>現状調査</h4>
               </div>
@@ -253,7 +262,7 @@
                 <img class="gray"  src="img/ARC_03_003.jpg" alt="除去前" />
               </div>
             </div>
-            <div class="flow-wrap__body__item">
+            <div class="flow-wrap__body__item" data-step="3">
               <div class="flow-wrap__body__item__head">
                 <h4>仮設足場の設置</h4>
               </div>
@@ -264,9 +273,10 @@
               </div>
               <div class="flow-wrap__body__item__img">
                 <img class="gray"  src="img/ARC_03_004.jpg"   alt="仮設足場の設置" />
+                <img class="gray"  src="img/1頂部足場.JPG"   alt="仮設足場の設置" />
               </div>
             </div>
-            <div class="flow-wrap__body__item">
+            <div class="flow-wrap__body__item" data-step="4">
               <div class="flow-wrap__body__item__head">
                 <h4>作業床防水及び壁等養生</h4>
               </div>
@@ -276,10 +286,11 @@
                 </p>
               </div>
               <div class="flow-wrap__body__item__img">
-                <img class="gray"  src="img/ARC_03_005.jpg"   alt="仮設足場の設置" />
+                <img class="gray"  src="img/ARC_03_005.jpg"   alt="作業床防水及び壁等養生" />
+                <img class="gray"  src="img/頂部口隔離養生.JPG"   alt="作業床防水及び壁等養生" />
               </div>
             </div>
-            <div class="flow-wrap__body__item">
+            <div class="flow-wrap__body__item" data-step="5">
               <div class="flow-wrap__body__item__head">
                 <h4>負圧防じん装置・セキュリティ等設置</h4>
               </div>
@@ -292,7 +303,7 @@
                 <img class="gray"  src="img/ARC_03_006.jpg"   alt="仮設足場の設置" />
               </div>
             </div>
-            <div class="flow-wrap__body__item">
+            <div class="flow-wrap__body__item" data-step="6">
               <div class="flow-wrap__body__item__head">
                 <h4>横引煙道等の仮閉鎖</h4>
               </div>
@@ -305,7 +316,7 @@
                 <img class="gray"  src="img/ARC_03_007.jpg"   alt="仮設足場の設置" />
               </div>
             </div>
-            <div class="flow-wrap__body__item">
+            <div class="flow-wrap__body__item" data-step="7">
               <div class="flow-wrap__body__item__head">
                 <h4>ARC装置取付</h4>
               </div>
@@ -318,7 +329,7 @@
                 <img class="gray"  src="img/ARC_03_008.jpg"   alt="仮設足場の設置" />
               </div>
             </div>
-            <div class="flow-wrap__body__item">
+            <div class="flow-wrap__body__item" data-step="8">
               <div class="flow-wrap__body__item__head">
                 <h4>事前湿潤</h4>
               </div>
@@ -331,14 +342,11 @@
                 <img  class="gray" src="img/ARC_03_009.jpg"   alt="仮設足場の設置" />
                 <img  class="gray" src="img/ARC_03_010.jpg"   alt="仮設足場の設置" />
               </div>
-              <div class="flow-wrap__body__item__txt">
-                <p>作業イメージをビデオで見る</p>
-              </div>
-              <div class="flow-wrap__body__item__youtube">
-                <iframe src="https://www.youtube.com/embed/XZBQArbsfHo?si=E6Q9H99vGDf-MCsl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              <div class="flow-wrap__body__item__video">
+                <video src="video/事前湿潤.MP4" controls autoplay muted loop></video>
               </div>
             </div>
-            <div class="flow-wrap__body__item">
+            <div class="flow-wrap__body__item" data-step="9">
               <div class="flow-wrap__body__item__head">
                 <h4>煙突内壁のアスベスト含有断熱材の除去</h4>
               </div>
@@ -351,13 +359,11 @@
                 <img  class="gray" src="img/ARC_03_011.jpg"   alt="仮設足場の設置" />
                 <img  class="gray" src="img/ARC_03_012.jpg"   alt="仮設足場の設置" />
               </div>
-              <div class="flow-wrap__body__item__txt">
-                <p>作業イメージをビデオで見る</p>
+              <div class="flow-wrap__body__item__video">
+                <video src="video/カポスタック除去中.3gp" controls autoplay muted loop></video>
               </div>
-              <div class="flow-wrap__body__item__youtube">
-                <iframe src="https://www.youtube.com/embed/wvIesaImbHI?si=MmFIvicF-7lMT09r" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
-            <div class="flow-wrap__body__item">
+            <div class="flow-wrap__body__item" data-step="10">
               <div class="flow-wrap__body__item__head">
                 <h4>除去後の確認</h4>
               </div>
@@ -366,17 +372,15 @@
                   除去後の煙突内はモニタカメラにより確認し、不備があった場合は再洗浄などを実施する
                 </p>
               </div>
-              <div class="flow-wrap__body__item__img">
-                <img  class="gray" src="img/ARC_03_013.jpg"   alt="仮設足場の設置" />
-              </div>
-              <div class="flow-wrap__body__item__txt">
-                <p>作業イメージをビデオで見る</p>
+              <div class="flow-wrap__body__item__img" data-step="11">
+                <img  class="gray" src="img/除去完了.JPG"   alt="除去後の確認" />
+                <img  class="gray" src="img/12除去確認と撮影.JPG"   alt="除去後の確認" />
               </div>
               <div class="flow-wrap__body__item__youtube">
                 <iframe src="https://www.youtube.com/embed/dB00hEoKvMk?si=AlEcTizWauzprztF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
               </div>
             </div>
-            <div class="flow-wrap__body__item">
+            <div class="flow-wrap__body__item" data-step="12">
               <div class="flow-wrap__body__item__head">
                 <h4>除去物の袋づめ</h4>
               </div>
@@ -389,10 +393,13 @@
                 <img  class="gray" src="img/ARC_03_014.jpg"   alt="仮設足場の設置" />
                 <img  class="gray" src="img/ARC_03_015.jpg"   alt="仮設足場の設置" />
               </div>
+              <div class="flow-wrap__body__item__video">
+                <video src="video/11.掻き出し・袋詰め1.MP4" controls autoplay muted loop></video>
+              </div>
             </div>
-            <div class="flow-wrap__body__item">
+            <div class="flow-wrap__body__item" data-step="13">
               <div class="flow-wrap__body__item__head">
-                <h4>隔離区域内へ →飛散防止剤の吹き付け</h4>
+                <h4>隔離区域内へ→飛散防止剤の吹き付け</h4>
               </div>
               <div class="flow-wrap__body__item__txt">
                 <p>
@@ -404,7 +411,7 @@
                 <img  class="gray" src="img/ARC_03_019.jpg"   alt="隔離区域内へ→飛散防止剤の吹き付け" />
               </div>
             </div>
-            <div class="flow-wrap__body__item">
+            <div class="flow-wrap__body__item" data-step="14">
               <div class="flow-wrap__body__item__head">
                 <h4>養生撤去および片付け</h4>
               </div>
@@ -535,6 +542,7 @@
             </div>
           </div>
         </div>
+      </section>
     </main>
     <script src="js/arc.js"></script> 
     <script>
