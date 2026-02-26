@@ -146,7 +146,7 @@ ol.feature-wrap__body__list ol {
   }
 }
 .question-wrap {
-  padding-bottom:80px;
+  padding-bottom: 80px;
 }
 .container {
   margin: 20px 0;
@@ -273,13 +273,13 @@ ol.feature-wrap__body__list ol {
 .image-wrap__body {
   display: flex;
   align-items: center;
-  padding:20px 0 60px 0;
+  padding: 20px 0 60px 0;
 }
 .image-wrap__body__video {
-  width:45%;
+  width: 45%;
 }
 .image-wrap__body__video video {
-  width:100%;
+  width: 100%;
 }
 .image-wrap__body__img {
   width: 50%;
@@ -294,12 +294,6 @@ ol.feature-wrap__body__list ol {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-}
-.flow-wrap__body__item img {
-  width: 200px;
-  -o-object-fit: cover;
-  object-fit: cover;
-  margin-bottom: 15px;
 }
 .flow-wrap__body__item__txt {
   margin-bottom: 5px;
@@ -324,97 +318,45 @@ ol.feature-wrap__body__list ol {
   margin: 0;
   padding: 0;
 }
-
-@media (max-width: 1100px) {
-  .sprayed-wrap__body,
-  .dioxin-wrap__body,
-  .jet-wrap__body,
-  .Corrosion-wrap__body {
-    max-width: 85%;
-  }
-  .gray {
-    width: 90%;
-  }
-  ol.feature-wrap__body__list {
-    font-size: 14px;
-  }
-  .about-wrap__body__right {
-    width: 25%;
-  }
+.health-wrap__body {
+  position: relative;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 40px 0;
+  overflow: hidden;
 }
-@media (max-width: 767px) {
-  .flow-wrap__body__item img {
-    -o-object-fit: cover;
-    object-fit: cover;
-    margin-bottom: 15px;
-  }
+.health-wrap__body__list {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
 }
-@media (max-width: 540px) {
-  .top-wrap {
-    padding: 60px 0;
-  }
-  .title h3 {
-    font-size: 24px;
-  }
-  .title p {
-    font-size: 12px;
-  }
-  .about-wrap__body {
-    margin: 30px auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  .about-wrap__body__left {
-    width: 100%;
-  }
-  ol.feature-wrap__body__list {
-    font-size: 12px;
-  }
-  .flow-wrap__body__item__head h4 {
-    font-size: 16px;
-    font-weight: 500;
-    margin-bottom: 15px;
-    display: inline-block;
-    text-align: left;
-  }
-  .container .btn-box button {
-    font-size: 12px;
-  }
-  .feature-wrap {
-    padding: 15px 20px;
-    margin: 40px auto;
-    width: 85%;
-  }
-  .about-wrap__body__right {
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-end;
-  }
-  .about-wrap__body__right {
-    width: 100%;
-  }
-  .about-wrap__body__right__img {
-    width: 45%;
-  }
-  .flow-wrap__body__item img {
-    width: 50%;
-  }
-  /* これを付けた画像だけグレーにする */
-  .gray {
-    -webkit-filter: grayscale(100%);
-    filter: grayscale(100%);
-    transition:
-      filter 0.5s ease-in-out,
-      -webkit-filter 0.5s ease-in-out; /* なめらか */
-    will-change: filter;
-  }
-
-  /* 100%見えて1秒後にカラー化 */
-  .gray.is-color {
-    -webkit-filter: grayscale(0%);
-    filter: grayscale(0%);
-  }
+.health-wrap__bottom {
+  display: flex;
+  justify-content: space-between;
+}
+.health-wrap__head {
+  font-size: 24px;
+  margin-bottom: 5px;
+  color: #004fa4;
+}
+.health-wrap__head h5 {
+  font-weight: 500;
+}
+.health-wrap__bottom__left {
+  width: 70%;
+}
+.health-wrap__bottom__right {
+  width: 27%;
+}
+.health-wrap__bottom__right img {
+  display: flex;
+  text-align: center;
+  margin: 0 auto;
+}
+.health-caption {
+  text-align: center;
+  font-size: 10px;
+  margin-top: 5px;
 }
 /* ===== FLOW 全体（白い角丸の大枠） ===== */
 .flow-wrap__body {
@@ -430,11 +372,11 @@ ol.feature-wrap__body__list ol {
   content: "";
   position: absolute;
   top: 75px;
- bottom:calc(7% - 16px);
+  bottom: calc(6% - 16px);
   left: 50%;
   transform: translateX(-50%);
   width: 2px;
-  background: rgba(0, 0, 0, 1); /* ライン色は後で差し替えOK */
+  background: rgba(0, 0, 0, 0.7); /* ライン色は後で差し替えOK */
 }
 
 /* ===== 1ステップ（左右レイアウトの土台） ===== */
@@ -499,7 +441,8 @@ ol.feature-wrap__body__list ol {
   aspect-ratio: 4 / 3; /* 高さも揃える（好みでOK） */
   -o-object-fit: cover;
   object-fit: cover;
-      margin-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* 画像が2枚のときは半分ずつ */
@@ -533,27 +476,394 @@ ol.feature-wrap__body__list ol {
 /* 偶数＝左寄せ */
 .flow-wrap__body__item:nth-child(even) .flow-wrap__body__item__head h4 {
   justify-content: flex-start;
-  text-align:left;
+  text-align: left;
 }
-  @media (max-width: 768px) {
-    .flow-wrap__body {
-      padding: 40px 14px;
-    }
-    .flow-wrap__body::before {
-      left: 22px;
-      transform: none;
-    }
-    .flow-wrap__body__item {
-      grid-template-columns: 44px 1fr;
-      padding: 14px 0;
-    }
-    .flow-wrap__body__item::before,
-    .flow-wrap__body__item::after {
-      left: 22px;
-      transform: translateX(-50%);
-    }
-    .flow-wrap__body__item > * {
-      grid-column: 2 !important;
-    }
+@media (max-width: 768px) {
+  .flow-wrap__body {
+    padding: 40px 0 40px 40px;
+    overflow: auto;
+  }
+  .flow-wrap__body::before {
+    left: 40px;
+    transform: none;
+  }
+  .flow-wrap__body__item {
+    grid-template-columns: 44px 1fr;
+    padding: 14px 0;
+  }
+  .flow-wrap__body__item::before,
+  .flow-wrap__body__item::after {
+    left: 1px;
+    transform: translateX(-50%);
+  }
+  .flow-wrap__body__item > * {
+    grid-column: 2 !important;
+  }
+  .flow-wrap__body__item:nth-child(odd) .flow-wrap__body__item__head h4 {
+    justify-content: flex-start;
+  }
+  .image-wrap__body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0 60px 0;
+  }
+  .image-wrap__body__video {
+    width: 100%;
+  }
+  .image-wrap__body__img {
+    width: 100%;
+  }
+}
+/* =========================
+FLOW スクロールアニメーション
+========================= */
+
+/* 初期状態（非表示） */
+.flow-wrap__body__item {
+  opacity: 0;
+  transform: translateY(40px);
+  transition:
+    opacity 0.9s ease,
+    transform 0.9s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* 奇数：左から */
+.flow-wrap__body__item:nth-child(odd) {
+  transform: translateX(-60px);
+}
+
+/* 偶数：右から */
+.flow-wrap__body__item:nth-child(even) {
+  transform: translateX(60px);
+}
+
+/* 表示状態 */
+.flow-wrap__body__item.is-show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* 丸のアニメ */
+.flow-wrap__body__item::before {
+  transform: translateX(-50%) scale(0.6);
+  opacity: 0.4;
+  transition: all 1s ease;
+}
+.flow-wrap__body__item.is-show::before {
+  transform: translateX(-50%) scale(1);
+  opacity: 1;
+}
+
+/* ===== FLOW 全体（白い角丸の大枠） ===== */
+.flow-wrap__body {
+  position: relative;
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 40px 0;
+  overflow: hidden;
+}
+
+/* 中央の縦ライン（タイムライン） */
+.flow-wrap__body::before {
+  content: "";
+  position: absolute;
+  top: 75px;
+  bottom: calc(6% - 16px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  background: rgba(0, 0, 0, 0.7); /* ライン色は後で差し替えOK */
+}
+
+/* ===== 1ステップ（左右レイアウトの土台） ===== */
+.flow-wrap__body__item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 45px 1fr; /* 左 / 真ん中(ライン+丸) / 右 */
+  align-items: start;
+  gap: 10px;
+  padding: 16px 0;
+}
+
+/* ステップの丸（中央のドット） */
+.flow-wrap__body__item::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 18px;
+  transform: translateX(-50%);
+  width: 45px;
+  height: 45px;
+  border-radius: 999px;
+  background: #004fa4;
+  z-index: 2;
+}
+
+/* 丸の中に step番号を表示（data-step を使用） */
+.flow-wrap__body__item::after {
+  content: attr(data-step);
+  position: absolute;
+  left: 50%;
+  top: 21px;
+  transform: translateX(-50%);
+  font-size: 20px;
+  z-index: 3;
+  color: #fff;
+}
+
+/* 左右どちらに置くか：奇数=左、偶数=右（JAJAANのFLOWっぽい） */
+.flow-wrap__body__item:nth-child(odd) > * {
+  grid-column: 1;
+}
+.flow-wrap__body__item:nth-child(even) > * {
+  grid-column: 3;
+}
+
+/* 見出し */
+.flow-wrap__body__item__head h4 {
+  margin: 0;
+  font-size: 20px;
+  line-height: 1.4;
+}
+
+/* テキスト */
+.flow-wrap__body__item__txt p {
+  margin: 0;
+  line-height: 1.8;
+  font-size: 15px;
+}
+.flow-wrap__body__item__img img {
+  width: calc(50% - 5px) !important;
+  aspect-ratio: 4 / 3; /* 高さも揃える（好みでOK） */
+  -o-object-fit: cover;
+  object-fit: cover;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 画像が2枚のときは半分ずつ */
+.flow-wrap__body__item__img img + img {
+  width: calc(50% - 5px);
+}
+.flow-wrap__body__item__img img:first-child:has(+ img) {
+  width: calc(50% - 5px);
+}
+
+/* YouTube（レスポンシブ） */
+.flow-wrap__body__item__youtube {
+  padding: 0;
+  overflow: hidden;
+}
+
+.flow-wrap__body__item__youtube iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  display: block;
+  border: 0;
+}
+/* ===== FLOW 見出しの寄せ方向 ===== */
+/* 奇数＝右寄せ */
+.flow-wrap__body__item:nth-child(odd) .flow-wrap__body__item__head h4 {
+  justify-content: flex-end;
+  text-align: left;
+}
+
+/* 偶数＝左寄せ */
+.flow-wrap__body__item:nth-child(even) .flow-wrap__body__item__head h4 {
+  justify-content: flex-start;
+  text-align: left;
+}
+@media (max-width: 768px) {
+  .flow-wrap__body {
+    padding: 40px 0 40px 40px;
+    overflow: auto;
+  }
+  .flow-wrap__body::before {
+    left: 40px;
+    transform: none;
+  }
+  .flow-wrap__body__item {
+    grid-template-columns: 44px 1fr;
+    padding: 14px 0;
+  }
+  .flow-wrap__body__item::before,
+  .flow-wrap__body__item::after {
+    left: 1px;
+    transform: translateX(-50%);
+  }
+  .flow-wrap__body__item > * {
+    grid-column: 2 !important;
+  }
+  .flow-wrap__body__item:nth-child(odd) .flow-wrap__body__item__head h4 {
+    justify-content: flex-start;
+  }
+  .image-wrap__body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0 60px 0;
+  }
+  .image-wrap__body__video {
+    width: 100%;
+  }
+  .image-wrap__body__img {
+    width: 100%;
+  }
+  .health-wrap__bottom {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  .health-wrap__bottom__right {
+    width: 40%;
+    margin: 0 auto;
+  }
+  .health-wrap__bottom__left {
+    font-size: 12px;
+    width: 100%;
+  }
+  .flow-wrap__body__item {
+    grid-template-columns: 1fr 22px 1fr; /* 左 / 真ん中(ライン+丸) / 右 */
+  }
+}
+/* =========================
+FLOW スクロールアニメーション
+========================= */
+
+/* 初期状態（非表示） */
+.flow-wrap__body__item {
+  opacity: 0;
+  transform: translateY(40px);
+  transition:
+    opacity 0.9s ease,
+    transform 0.9s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* 奇数：左から */
+.flow-wrap__body__item:nth-child(odd) {
+  transform: translateX(-60px);
+}
+
+/* 偶数：右から */
+.flow-wrap__body__item:nth-child(even) {
+  transform: translateX(60px);
+}
+
+/* 表示状態 */
+.flow-wrap__body__item.is-show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* 丸のアニメ */
+.flow-wrap__body__item::before {
+  transform: translateX(-50%) scale(0.6);
+  opacity: 0.4;
+  transition: all 1s ease;
+}
+.flow-wrap__body__item.is-show::before {
+  transform: translateX(-50%) scale(1);
+  opacity: 1;
+}
+@media (max-width: 1100px) {
+  .sprayed-wrap__body,
+  .dioxin-wrap__body,
+  .jet-wrap__body,
+  .Corrosion-wrap__body {
+    max-width: 85%;
+  }
+  .gray {
+    width: 90%;
+  }
+  ol.feature-wrap__body__list {
+    font-size: 14px;
+  }
+  .about-wrap__body__right {
+    width: 25%;
+  }
+}
+@media (max-width: 767px) {
+  .flow-wrap__body__item img {
+    -o-object-fit: cover;
+    object-fit: cover;
+    margin-bottom: 15px;
+  }
+}
+@media (max-width: 540px) {
+  .top-wrap {
+    padding: 60px 0;
+  }
+  .title h3 {
+    font-size: 24px;
+  }
+  .title p {
+    font-size: 12px;
+  }
+  .about-wrap__body {
+    margin: 30px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .about-wrap__body__left {
+    width: 100%;
+  }
+  ol.feature-wrap__body__list {
+    font-size: 12px;
+  }
+  .flow-wrap__body__item__head h4 {
+    font-size: 16px;
+    margin-bottom: 15px;
+    display: inline-block;
+    text-align: left;
+  }
+  .container .btn-box button {
+    font-size: 12px;
+  }
+  .feature-wrap {
+    padding: 15px 20px;
+    margin: 40px auto;
+    width: 85%;
+  }
+  .about-wrap__body__right {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+  }
+  .about-wrap__body__right {
+    width: 100%;
+  }
+  .about-wrap__body__right__img {
+    width: 45%;
+  }
+  .flow-wrap__body__item img {
+    width: 50%;
+  }
+  /* これを付けた画像だけグレーにする */
+  .gray {
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    transition:
+      filter 0.5s ease-in-out,
+      -webkit-filter 0.5s ease-in-out; /* なめらか */
+    will-change: filter;
+  }
+
+  /* 100%見えて1秒後にカラー化 */
+  .gray.is-color {
+    -webkit-filter: grayscale(0%);
+    filter: grayscale(0%);
+  }
+  .flow-wrap__body__item__head h4 {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.4;
+  }
+  .flow-wrap__body__item__txt p {
+    margin: 0;
+    font-size: 12px;
   }
 }

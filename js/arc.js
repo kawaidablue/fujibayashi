@@ -70,4 +70,73 @@ document.addEventListener("DOMContentLoaded", () => {
 
   imgs.forEach(img => io.observe(img));
 });
+// =====================
+// FLOW スクロール表示
+// =====================
+document.addEventListener("DOMContentLoaded", () => {
 
+  const items = document.querySelectorAll(".flow-wrap__body__item");
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+
+      if(entry.isIntersecting){
+        entry.target.classList.add("is-show");
+
+        // 画像カラー化（既存gray活用）
+        const imgs = entry.target.querySelectorAll(".gray");
+        imgs.forEach(img=>{
+          setTimeout(()=>{
+            img.classList.add("is-color");
+          },600);
+        });
+
+      }
+
+    });
+  },{
+    threshold:0.5
+  });
+
+  items.forEach(el => io.observe(el));
+
+});
+document.addEventListener("DOMContentLoaded", () => {
+  const flow = document.querySelector(".flow-wrap__body");
+  if (!flow) return;
+
+  const items = [...flow.querySelectorAll(".flow-wrap__body__item")];
+  if (items.length === 0) return;
+
+  const LINE_TOP = 75; // CSSの ::before / ::after の top と合わせる
+
+  // 「最後の丸（step）」の位置までを最大値にする
+  const getMaxLine = () => {
+    const flowRect = flow.getBoundingClientRect();
+    const last = items[items.length - 1];
+    const lastRect = last.getBoundingClientRect();
+
+    // lastの丸は top:18px なので、だいたい丸の中心（+18+22.5）に合わせる
+    const lastDotCenterInFlow =
+      (lastRect.top - flowRect.top) + 18 + 22.5;
+
+    const max = Math.max(0, lastDotCenterInFlow - LINE_TOP);
+    return max;
+  };
+
+  const update = () => {
+    const flowRect = flow.getBoundingClientRect();
+    const maxLine = getMaxLine();
+
+    // 画面の中で「どこまで進んだか」
+    // flowの上端が画面に入ってからの進捗を線にする
+    const progressed = (window.innerHeight * 0.65) - flowRect.top - LINE_TOP;
+
+    const line = Math.min(Math.max(progressed, 0), maxLine);
+    flow.style.setProperty("--flow-line", `${line}px`);
+  };
+
+  update();
+  window.addEventListener("scroll", update, { passive: true });
+  window.addEventListener("resize", update);
+});
